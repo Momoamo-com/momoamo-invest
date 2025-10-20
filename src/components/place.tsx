@@ -5,14 +5,13 @@ import { usePlaceAnimations } from "@/animations/scrollAnimations";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
 // Images
-import Img1 from "@/assets/images/place/img1.jpg";
-import Img2 from "@/assets/images/place/img2.jpg";
-import Img3 from "@/assets/images/place/img3.jpg";
-import Img4 from "@/assets/images/place/img4.jpg";
-import TableImg1 from "@/assets/images/place/tbl_img1.jpg";
-import TableImg2 from "@/assets/images/place/tbl_img2.jpg";
-import TableImg3 from "@/assets/images/place/tbl_img3.jpg";
-import TableImg4 from "@/assets/images/place/tbl_img4.jpg";
+import Img1 from "@/assets/images/place/place-slider-1.webp";
+import Img2 from "@/assets/images/place/place-slider-2.webp";
+import Img3 from "@/assets/images/place/place-slider-3.jpg";
+import Img4 from "@/assets/images/place/place-slider-4.webp";
+import Img5 from "@/assets/images/place/place-slider-5.webp";
+import Img6 from "@/assets/images/place/place-slider-6.webp";
+import Img7 from "@/assets/images/place/place-slider-7.webp";
 import { useState } from "react";
 import ModalReservation from "./ui/modal-reservation";
 import { InfiniteMovingLogo } from "./ui/infinite-moving-logo";
@@ -74,7 +73,7 @@ const PlaceSection = () => {
           <InfiniteMovingLogo
             pauseOnHover={false}
             classNameWrapper="gap-5 md:gap-14 items-center"
-            speed="normal"
+            speed="slow"
             direction="left"
             aria-roledescription="carousel"
           >
@@ -115,6 +114,33 @@ const PlaceSection = () => {
               loading="lazy"
             />
             <Image
+              src={Img5}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={474}
+              className="md:w-[474px] md:h-[474px] w-[165px] h-[165px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
+              src={Img6}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={711}
+              className="md:w-[474px] md:h-[711px] w-[165px] h-[247px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
+              src={Img7}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={474}
+              className="md:w-[474px] md:h-[474px] w-[165px] h-[165px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
               src={Img1}
               alt=""
               aria-hidden="true"
@@ -147,7 +173,34 @@ const PlaceSection = () => {
               aria-hidden="true"
               width={474}
               height={711}
-              className="md:w-[474px] md:h-[711px] w-[165px] h-[247px] object-cover rounded md:mr-[56px] pointer-events-none"
+              className="md:w-[474px] md:h-[711px] w-[165px] h-[247px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
+              src={Img5}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={474}
+              className="md:w-[474px] md:h-[474px] w-[165px] h-[165px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
+              src={Img6}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={711}
+              className="md:w-[474px] md:h-[711px] w-[165px] h-[247px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
+              loading="lazy"
+            />
+            <Image
+              src={Img7}
+              alt=""
+              aria-hidden="true"
+              width={474}
+              height={474}
+              className="md:w-[474px] md:h-[474px] w-[165px] h-[165px] object-cover rounded mr-[19px] md:mr-[56px] pointer-events-none"
               loading="lazy"
             />
           </InfiniteMovingLogo>
@@ -174,25 +227,21 @@ const PlaceSection = () => {
                     title: "Perche",
                     description: "coming soon",
                     date: "2025",
-                    img: TableImg3,
                   },
                   {
                     title: "Normandie",
                     description: "coming soon",
                     date: "2026",
-                    img: TableImg2,
                   },
                   {
                     title: "Deauville",
                     description: "coming soon",
                     date: "2026",
-                    img: TableImg1,
                   },
                   {
                     title: "Vexin",
                     description: "coming soon",
                     date: "2027",
-                    img: TableImg4,
                   },
                 ].map((item, idx) => (
                   <li

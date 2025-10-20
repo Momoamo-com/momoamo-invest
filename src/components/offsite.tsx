@@ -7,17 +7,14 @@ import { useOffsiteAnimations } from "@/animations/scrollAnimations";
 
 // Images
 import Img1 from "@/assets/images/offsite/img1.jpg";
-import Img2 from "@/assets/images/offsite/img2.jpg";
+import Img2 from "@/assets/images/offsite/offsite-attr-2.webp";
 import Img3 from "@/assets/images/offsite/img3.jpg";
 import Img4 from "@/assets/images/offsite/img4.jpg";
-import Img5 from "@/assets/images/place/img1.jpg";
+import Img5 from "@/assets/images/place/offsite-attr-1.webp";
 import Img6 from "@/assets/images/place/img2.jpg";
 import Img7 from "@/assets/images/place/img3.jpg";
-import Img8 from "@/assets/images/place/img4.jpg";
+import Img8 from "@/assets/images/place/offsite-attr-3.jpg";
 import { useWindowSize } from "@/hooks/useWindowSize";
-
-// Create a motion version of the Image component
-const MotionImage = motion(Image);
 
 const OffsiteSection = () => {
   const { width } = useWindowSize();

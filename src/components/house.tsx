@@ -17,7 +17,7 @@ import HomeGear_Svg from "@/assets/images/house/home_and_garden.svg";
 import Business_Svg from "@/assets/images/house/business_center.svg";
 
 // Images
-import Img1 from "@/assets/images/house/img1.jpg";
+import Img1 from "@/assets/images/house/de-20-a-50-personnes.webp";
 import Img2 from "@/assets/images/house/img2.jpg";
 import Img3 from "@/assets/images/house/img3.jpg";
 import Img4 from "@/assets/images/house/img4.jpg";

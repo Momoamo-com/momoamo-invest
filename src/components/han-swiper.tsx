@@ -116,57 +116,12 @@ const HanSwiper = forwardRef<HanSwiperRef, HanSwiperProps>(
           }}
           className="mt-4"
         >
-        {/* Navigation buttons - Only show if there's more than one slide */}
-        {slides.length > 1 && (
-          <>
-            <button
-              onClick={handlePrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/30 rounded-full z-10 text-white"
-              aria-label="Previous slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-black/30 rounded-full z-10 text-white"
-              aria-label="Next slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-          </>
-        )}
           {slides.map((slide, idx) => (
             <SwiperSlide key={idx}>
               <figure className="w-full h-full flex items-center justify-center">
                 <Image
-                  src={typeof slide === 'string' ? slide : slide.src}
-                  alt={typeof slide === 'string' ? "" : slide.alt || ""}
+                  src={typeof slide === "string" ? slide : slide.src}
+                  alt={typeof slide === "string" ? "" : slide.alt || ""}
                   width={1400}
                   height={761}
                   className="md:h-[100svh] w-full h-[400px] object-cover"

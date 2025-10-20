@@ -6,6 +6,9 @@ import { useCastleAnimations } from "@/animations/scrollAnimations";
 
 import HanSwiper, { HanSwiperRef } from "./han-swiper";
 import HouseImage from "@/assets/images/second_home.jpg";
+import House1 from "@/assets/images/house/house-1.jpg";
+import House2 from "@/assets/images/house/house-2.jpg";
+import House3 from "@/assets/images/house/house-3.jpg";
 import Arrow_Svg from "@/assets/images/svgs/castle_arrow.svg";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 import Bed_Svg from "@/assets/images/svgs/bed.svg";
@@ -75,10 +78,7 @@ const CastleSection = () => {
     hanSwiperRef.current?.handlePrev();
   };
 
-  const slides = [
-    HouseImage.src,
-    HouseImage.src
-  ];
+  const slides = [HouseImage.src, House1.src, House2.src, House3.src];
 
   return (
     <>
@@ -108,50 +108,46 @@ const CastleSection = () => {
 
         {/* Swiper */}
         <figure ref={swiperRef} aria-label="Galerie de photos du domaine">
-          <HanSwiper
-            ref={hanSwiperRef}
-            slides={slides}
-          />
+          <HanSwiper ref={hanSwiperRef} slides={slides} />
         </figure>
 
-        
         <div className="md:mt-[49px] mt-[32px] flex justify-between">
           {slides.length > 1 && (
-          <nav
-            className="md:flex hidden justify-between max-w-28 w-28"
-            aria-label="Navigation du carrousel"
-          >
-            <button
-              className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
-              aria-label="Image précédente"
-              onClick={handlePrev}
-              type="button"
+            <nav
+              className="md:flex hidden justify-between max-w-28 w-28"
+              aria-label="Navigation du carrousel"
             >
-              <Image
-                src={Arrow_Svg}
-                alt=""
-                width={18.67}
-                height={18.67}
-                className="w-[18.67px] h-[18.67px]"
-                aria-hidden="true"
-              />
-            </button>
-            <button
-              className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
-              aria-label="Image suivante"
-              onClick={handleNext}
-              type="button"
-            >
-              <Image
-                src={Arrow_Svg}
-                alt=""
-                width={18.67}
-                height={18.67}
-                className="w-[18.67px] h-[18.67px] rotate-180"
-                aria-hidden="true"
-              />
-            </button>
-          </nav>
+              <button
+                className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
+                aria-label="Image précédente"
+                onClick={handlePrev}
+                type="button"
+              >
+                <Image
+                  src={Arrow_Svg}
+                  alt=""
+                  width={18.67}
+                  height={18.67}
+                  className="w-[18.67px] h-[18.67px]"
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                className="w-8 h-8 rounded bg-transparent flex justify-center items-center p-[6.67px]"
+                aria-label="Image suivante"
+                onClick={handleNext}
+                type="button"
+              >
+                <Image
+                  src={Arrow_Svg}
+                  alt=""
+                  width={18.67}
+                  height={18.67}
+                  className="w-[18.67px] h-[18.67px] rotate-180"
+                  aria-hidden="true"
+                />
+              </button>
+            </nav>
           )}
           <div ref={titleRef} className="md:w-[915px] w-full">
             <p className="text-start text-black-green text-[18px] font-normal font-general tracking-normal">

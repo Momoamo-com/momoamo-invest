@@ -3,7 +3,7 @@
 import { useVacationAnimations } from "@/animations/scrollAnimations";
 import Image from "next/image";
 import Img1 from "@/assets/images/vacation/img1.jpg";
-import Img2 from "@/assets/images/vacation/img2.png";
+import Img2 from "@/assets/images/vacation/go-off-script.jpeg";
 import Img3 from "@/assets/images/vacation/img3.png";
 import { useWindowSize } from "@/hooks/useWindowSize";
 

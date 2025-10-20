@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useFooterAnimations } from "@/animations/scrollAnimations";
-import Img3 from "@/assets/images/offsite/img3.jpg";
+import Img3 from "@/assets/images/offsite/join-the-community.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";

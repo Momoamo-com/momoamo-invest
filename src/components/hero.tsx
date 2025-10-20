@@ -10,8 +10,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const MotionImage = motion(Image);
 
 // Images
-import User3Image from "@/assets/images/hero/user3.jpg";
-import User2Image from "@/assets/images/hero/user2.jpg";
+import User3Image from "@/assets/images/hero/hero-attr-2.webp";
+import User2Image from "@/assets/images/hero/hero-attr-1.webp";
+import User4Image from "@/assets/images/hero/hero-attr-3.webp";
 import User1Image from "@/assets/images/hero/user1.jpg";
 import HouseImage from "@/assets/images/hero/house.jpg";
 import Link from "next/link";
@@ -31,19 +32,21 @@ const HeroSection = ({
   const { heroRef } = useHeroScrollAnimations(lettersRef, titleRef);
   useHeroInteractiveAnimations();
   const [isModal, setIsModal] = useState(false);
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(null);
+  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
+    null
+  );
   const [lastScrollY, setLastScrollY] = useState(0);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY) {
         setScrollDirection("down");
       } else if (currentScrollY < lastScrollY) {
         setScrollDirection("up");
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -97,7 +100,11 @@ const HeroSection = ({
             </button>
           </div>
         </header>
-        <Letters isScroll={isScroll} stop={stop} direction={scrollDirection || "down"} />
+        <Letters
+          isScroll={isScroll}
+          stop={stop}
+          direction={scrollDirection || "down"}
+        />
         <main className="w-full h-full md:mt-10 mt-[18px]">
           <article className="w-full h-[28%]">
             <header
@@ -147,7 +154,7 @@ const HeroSection = ({
                 width={355}
                 height={533}
                 aria-hidden="true"
-                className="hero-image w-[219px] h-[310px] md:h-auto object-cover absolute -right-[50px] bottom-[387px] md:w-[calc(50%-400px)] md:aspect-[355/533] md:bottom-auto md:top-[27.8%] md:right-[56px] pointer-events-none"
+                className="hero-image w-[219px] h-[310px] md:h-auto object-cover absolute -right-[50px] bottom-[387px] lg:w-[calc(50%-400px)] lg:aspect-[355/533] lg:bottom-auto lg:top-[27.8%] lg:right-[56px] pointer-events-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.0, duration: 1.5 }}
@@ -159,7 +166,7 @@ const HeroSection = ({
                 width={162}
                 height={243}
                 aria-hidden="true"
-                className="hero-image w-[129px] h-[193px] object-cover absolute bottom-[118px] left-0 z-[2] md:aspect-[162/243] md:h-auto md:w-[10%] lg:left-[10.22%] lg:bottom-[29%] xl:left-[12.22%] xl:bottom-[32%] pointer-events-none"
+                className="hero-image w-[129px] h-[193px] object-cover absolute bottom-[118px] left-0 z-[2] lg:aspect-[162/243] lg:h-auto lg:w-[10%] lg:left-[10.22%] lg:bottom-[29%] xl:left-[12.22%] xl:bottom-[32%] pointer-events-none"
                 initial={{ opacity: 0, zIndex: 2 }}
                 animate={{ opacity: 1, zIndex: 2 }}
                 transition={{ delay: 2.4, duration: 1.5 }}
@@ -171,7 +178,19 @@ const HeroSection = ({
                 width={206}
                 height={309}
                 aria-hidden="true"
-                className="hero-image w-[164px] h-[245px] object-cover absolute -bottom-[50px] left-[31px] z-[1] md:aspect-[200/300] md:h-auto lg:w-[12.33%] lg:left-[13.33%] xl:w-[13.33%] xl:left-[15.33%] md:bottom-[8%] pointer-events-none"
+                className="hero-image w-[164px] h-[245px] object-cover absolute -bottom-[50px] left-[31px] z-[1] lg:aspect-[200/300] lg:h-auto lg:w-[12.33%] lg:left-[13.33%] xl:w-[13.33%] xl:left-[15.33%] lg:bottom-[8%] pointer-events-none"
+                initial={{ opacity: 0, zIndex: 1 }}
+                animate={{ opacity: 1, zIndex: 1 }}
+                transition={{ delay: 2.2, duration: 1.5 }}
+                loading="eager"
+              />
+              <MotionImage
+                src={User4Image.src}
+                alt=""
+                width={206}
+                height={309}
+                aria-hidden="true"
+                className="hero-image hidden lg:block w-[164px] h-[245px] object-cover absolute -bottom-[50px] z-[1] md:aspect-[200/300] md:h-auto lg:w-[12.33%] lg:right-0 xl:w-[13%] md:bottom-[8%] pointer-events-none"
                 initial={{ opacity: 0, zIndex: 1 }}
                 animate={{ opacity: 1, zIndex: 1 }}
                 transition={{ delay: 2.2, duration: 1.5 }}
@@ -183,7 +202,7 @@ const HeroSection = ({
                 width={201}
                 height={250}
                 aria-hidden="true"
-                className="hero-image absolute bottom-0 left-0 w-[201px] h-[250px] object-cover md:block hidden md:left-[-1%] md:bottom-[-2%] md:aspect-[200/250] md:w-[13%] md:h-auto pointer-events-none"
+                className="hero-image absolute bottom-0 left-0 w-[201px] h-[250px] object-cover lg:block hidden md:left-[-1%] md:bottom-[-2%] md:aspect-[200/250] md:w-[13%] md:h-auto pointer-events-none"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.6, duration: 1.5 }}
