@@ -201,8 +201,8 @@ const HouseSection = () => {
           {[
             {
               img: Img1.src,
-              title: "de 20 à 50 personnes",
-              description: "Un groupe = Une maison",
+              title: "De 15 à 50 personnes",
+              description: "Un groupe = une maison",
             },
             {
               img: Img2.src,
