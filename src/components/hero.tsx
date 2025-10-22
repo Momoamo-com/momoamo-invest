@@ -72,7 +72,7 @@ const HeroSection = ({
         >
           <nav className="flex md:justify-start justify-between items-center gap-6 w-full">
             <a
-              href="#"
+              href="https://www.instagram.com/momoamo_places/"
               className="uppercase leading-none tracking-wider font-nichrome text-lime-green text-[18px] font-bold no-underline cursor-pointer"
             >
               instagram

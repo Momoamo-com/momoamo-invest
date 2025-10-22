@@ -166,7 +166,7 @@ const HouseSection = () => {
       <figure
         ref={swiperAnimRef}
         aria-label="Caractéristiques des maisons Momoamo"
-        className="w-[90%] md:w-[95%] mt-12 px-4"
+        className="w-full mt-12 px-4"
       >
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -179,17 +179,18 @@ const HouseSection = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          slidesPerView={1}
+          slidesPerView={1.1}
           spaceBetween={16}
           loop={true}
+          slideToClickedSlide={true}
+          centeredSlides={false}
+          slidesOffsetAfter={0}
           breakpoints={{
             768: {
-              slidesPerView: 2,
-              spaceBetween: 16,
+              slidesPerView: 2.1,
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 16,
+              slidesPerView: 3.1,
             },
           }}
           onInit={(swiper) => {

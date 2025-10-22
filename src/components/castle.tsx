@@ -5,16 +5,12 @@ import { useRef, useState } from "react";
 import { useCastleAnimations } from "@/animations/scrollAnimations";
 
 import HanSwiper, { HanSwiperRef } from "./han-swiper";
-import HouseImage from "@/assets/images/second_home.jpg";
-import House1 from "@/assets/images/house/house-1.jpg";
-import House2 from "@/assets/images/house/house-2.jpg";
 import House3 from "@/assets/images/house/house-3.jpg";
 import Arrow_Svg from "@/assets/images/svgs/castle_arrow.svg";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 import Bed_Svg from "@/assets/images/svgs/bed.svg";
 import ChairAlt_Svg from "@/assets/images/svgs/chair_alt.svg";
 import Forest_Svg from "@/assets/images/svgs/forest.svg";
-import Outdoor_Grill_Svg from "@/assets/images/svgs/outdoor_grill.svg";
 import Nightlife_Svg from "@/assets/images/svgs/nightlife.svg";
 import Castle_Svg from "@/assets/images/svgs/castle.svg";
 import Pool_Svg from "@/assets/images/svgs/pool.svg";

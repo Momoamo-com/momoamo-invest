@@ -61,8 +61,53 @@ const nichrome = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MOMOAMO",
-  description: "MOMOAMO",
+  title: "MOMOAMO | Votre prochain offsite commence ici",
+  description: "Découvrez la toute première maison Momoamo: un domaine de 90 hectares en Sologne, à l'est de la forêt d'Orléans à moins d'1h10 de Paris, pensé pour que chaque séjour d'équipe devienne une expérience unique.",
+  keywords: ["offsite", "séjour professionnel", "séminaire", "maison d'exception", "équipe", "entreprise", "événement professionnel", "luxe", "France"],
+  authors: [{ name: "MOMOAMO" }],
+  creator: "MOMOAMO",
+  publisher: "MOMOAMO",
+  formatDetection: {
+    email: false,
+    telephone: false,
+  },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://momo.wilcot.co"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "MOMOAMO | Votre prochain offsite commence ici",
+    description: "Découvrez la toute première maison Momoamo: un domaine de 90 hectares en Sologne, à l'est de la forêt d'Orléans à moins d'1h10 de Paris, pensé pour que chaque séjour d'équipe devienne une expérience unique.",
+    url: process.env.NEXT_PUBLIC_BASE_URL || "https://momo.wilcot.co",
+    siteName: "MOMOAMO",
+    locale: "fr_FR",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MOMOAMO - Expériences de séjour uniques",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MOMOAMO | Votre prochain offsite commence ici",
+    description: "Découvrez la toute première maison Momoamo: un domaine de 90 hectares en Sologne, à l'est de la forêt d'Orléans à moins d'1h10 de Paris, pensé pour que chaque séjour d'équipe devienne une expérience unique.",
+    images: ["/og-image.png"],
+    creator: "@momoamo",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -71,7 +116,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="fr" className="scroll-smooth">
       <body className={`${generalSans.variable} ${nichrome.variable}`}>
         <GSAPProvider>{children}</GSAPProvider>
       </body>

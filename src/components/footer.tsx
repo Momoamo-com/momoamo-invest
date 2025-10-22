@@ -373,7 +373,7 @@ const FooterSection = ({
             aria-label="Social media links"
           >
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/momoamo_places/"
               target="_blank"
               rel="noopener noreferrer"
               className="relative cursor-pointer w-fit group touch-manipulation md:mb-[24px]"
