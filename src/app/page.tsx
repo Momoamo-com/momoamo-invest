@@ -23,6 +23,11 @@ const Home = () => {
       }
     };
 
+    // Check initial scroll position when component mounts
+    if (window.scrollY > 0 && !isScroll) {
+      setIsScroll(true);
+    }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScroll]);

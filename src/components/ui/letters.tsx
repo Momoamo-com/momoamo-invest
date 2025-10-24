@@ -31,9 +31,6 @@ const Letters = ({
       <motion.div
         key="letters"
         initial={false}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 40, scale: 0.9 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
         className="relative w-full h-[70px] md:h-[200px] flex items-center cursor-pointer"
         onClick={() => router.push("#hero")}
       >
@@ -42,31 +39,16 @@ const Letters = ({
             className={[
               "word fixed max-w-[1360px] left-1/2 -translate-x-1/2 px-4 xl:px-14 w-full justify-center flex z-30",
             ].join(" ")}
-            animate={
-              isScroll && direction === "down"
-                ? {
-                    scale: smallScale,
-                    top: !isScroll
-                      ? isMobile
-                        ? 70
-                        : 100
-                      : isMobile
-                      ? 10
-                      : -56,
-                    y: "-100%",
-                  }
-                : {
-                    scale: isScroll ? smallScale : bigScale,
-                    top: !isScroll
-                      ? isMobile
-                        ? 70
-                        : 100
-                      : isMobile
-                      ? 10
-                      : -56,
-                  }
-            }
-            transition={{ duration: 0.4, ease: "easeInOut" }}
+            animate={{
+              scale: isScroll ? smallScale : bigScale,
+              top: !isScroll ? (isMobile ? 70 : 100) : isMobile ? 10 : -56,
+              y: isScroll && direction === "down" ? "-100%" : "0%",
+            }}
+            transition={{
+              duration: 0.4,
+              ease: "easeInOut",
+              y: { delay: 0.5, duration: 0.4, ease: "easeInOut" },
+            }}
           >
             {/* M */}
             <motion.span

@@ -92,7 +92,7 @@ const CastleSection = () => {
       >
         <header
           ref={titleRef}
-          className="md:mb-[56px] mb-[32px] w-[830px] max-w-full"
+          className="md:mb-[56px] mb-[32px] w-[1110px] max-w-full"
         >
           <h2 className="uppercase text-start text-black-green md:text-[86px] text-[58px] font-nichrome font-bold tracking-normal leading-none">
             Domaine de Courtigis
