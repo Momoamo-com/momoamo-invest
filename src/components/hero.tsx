@@ -87,12 +87,6 @@ const HeroSection = ({
           <div className="justify-end items-center gap-6 hidden md:flex">
             <button
               type="button"
-              className="uppercase leading-none tracking-wider font-nichrome font-bold text-lime-green text-2xl w-[159px] h-[44px] border-[1px] border-lime-green transition-all duration-300 ease-in"
-            >
-              connexion
-            </button>
-            <button
-              type="button"
               onClick={() => setIsModal(true)}
               className="uppercase leading-none tracking-wider font-nichrome font-bold text-dark-green text-2xl w-[159px] h-[44px] border-[1px] bg-lime-green hover:!bg-dark-green hover:!text-lime-green border-lime-green transition-all duration-300 ease-in"
             >

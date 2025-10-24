@@ -36,7 +36,7 @@ export async function sendEmail({
   const notificationMail = {
     from: "Momoamo<no-reply@momoamo.com>",
     to: "contact@momoamo.com",
-    subject: `Nouvelle demande de réservation : ${entreprise}`,
+    subject: `Nouvelle demande : ${entreprise}`,
     text: `Prénom: ${prenom}\nNom: ${nom}\nEmail: ${email}\nTéléphone: ${phone}\nEntreprise: ${entreprise}\nParticipants: ${participants}\nMessage: \n${message}\nDate d'arrivée: ${
       arrivalDate ?? ""
     }\nDate de départ: ${
