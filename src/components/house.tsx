@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useHouseAnimations } from "@/animations/scrollAnimations";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Virtual } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -166,7 +166,7 @@ const HouseSection = () => {
       <figure
         ref={swiperAnimRef}
         aria-label="Caractéristiques des maisons Momoamo"
-        className="w-full mt-12 px-4"
+        className="w-[120%] mt-12 px-4"
       >
         <Swiper
           modules={[Navigation, Autoplay]}
@@ -179,20 +179,9 @@ const HouseSection = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          slidesPerView={1.1}
+          slidesPerView="auto"
           spaceBetween={16}
           loop={true}
-          slideToClickedSlide={true}
-          centeredSlides={false}
-          slidesOffsetAfter={0}
-          breakpoints={{
-            768: {
-              slidesPerView: 2.1,
-            },
-            1024: {
-              slidesPerView: 3.1,
-            },
-          }}
           onInit={(swiper) => {
             swiperRef.current = swiper;
           }}
@@ -220,8 +209,32 @@ const HouseSection = () => {
               title: "Design & Singularité",
               description: "Une immersion immédiate",
             },
+            {
+              img: Img4.src,
+              title: "De 15 à 50 personnes",
+              description: "Un groupe = une maison",
+            },
+            {
+              img: Img2.src,
+              title: "A moins de 2h des grandes villes",
+              description: "Paris, Bordeaux, Lyon, Marseille…",
+            },
+            {
+              img: Img3.src,
+              title: "Ancrée dans la nature",
+              description: "Pour s'inspirer, se déconnecter, se dépasser",
+            },
+            {
+              img: Img1.src,
+              title: "Design & Singularité",
+              description: "Une immersion immédiate",
+            },
           ].map((item, idx) => (
-            <SwiperSlide key={idx} aria-roledescription="slide">
+            <SwiperSlide
+              key={idx}
+              aria-roledescription="slide"
+              className="!w-[80vw] md:!w-[40vw] lg:!w-[30vw]"
+            >
               <article className="flex-shrink-0 px-0 relative group">
                 <div
                   className="relative w-full h-full overflow-hidden"

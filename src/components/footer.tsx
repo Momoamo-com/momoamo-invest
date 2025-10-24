@@ -285,12 +285,11 @@ const FooterSection = ({
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [title, setTitle] = useState("Privacy Policy");
   const footerImageRef = useRef<HTMLDivElement>(null);
+  const joinCommunitySectionRef = useRef<HTMLDivElement>(null);
   const lastStopRef = useRef<boolean>(false);
-  const ENTER_THRESHOLD = 0.5; // >= 50% visible -> consider "in"
-  const EXIT_THRESHOLD = 0.2; // <= 20% visible -> consider "out"
 
   useEffect(() => {
-    const el = footerImageRef.current;
+    const el = joinCommunitySectionRef.current;
     if (!el) return;
 
     const thresholds = Array.from({ length: 20 }, (_, i) => i / 20); // 0, 0.05, 0.1 ... 1
@@ -298,20 +297,20 @@ const FooterSection = ({
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        const ratio = entry.intersectionRatio;
 
-        const shouldBeStopped = lastStopRef.current
-          ? ratio > EXIT_THRESHOLD // kalau sudah true, tunggu ratio benar-benar keluar
-          : ratio >= ENTER_THRESHOLD; // kalau masih false, tunggu ratio cukup besar
+        // Check if the bottom of the section is intersecting with the bottom of the viewport
+        const boundingRect = entry.boundingClientRect;
+        const windowHeight = window.innerHeight;
+        const bottomIntersecting = boundingRect.bottom <= windowHeight;
 
-        if (shouldBeStopped !== lastStopRef.current) {
-          lastStopRef.current = shouldBeStopped;
-          setStop(shouldBeStopped);
+        if (bottomIntersecting !== lastStopRef.current) {
+          lastStopRef.current = bottomIntersecting;
+          setStop(bottomIntersecting);
         }
       },
       {
         root: null,
-        rootMargin: "-10% 0px -10% 0px",
+        rootMargin: "0px",
         threshold: thresholds,
       }
     );
@@ -328,7 +327,11 @@ const FooterSection = ({
         aria-label="Site footer"
         ref={footerImageRef}
       >
-        <div className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full flex md:flex-row flex-col justify-between md:gap-[28px] gap-[32px]">
+        <div
+          id="join-the-community"
+          ref={joinCommunitySectionRef}
+          className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full flex md:flex-row flex-col justify-between md:gap-[28px] gap-[32px]"
+        >
           <header ref={topContentRef} className="w-full">
             <h2 className="text-lime-green font-nichrome font-bold md:text-[86px] text-[58px] uppercase leading-none mb-[32px] md:mb-[24px]">
               Join the <br /> community
