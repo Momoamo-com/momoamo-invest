@@ -1,0 +1,106 @@
+import { WebClient } from "@slack/web-api";
+
+export async function sendSlackMessage({
+  prenom,
+  nom,
+  email,
+  phone,
+  entreprise,
+  participants,
+  message,
+  arrivalDate,
+  departureDate,
+  isFlexibleDates,
+}: {
+  prenom: string;
+  nom: string;
+  email: string;
+  phone: string;
+  entreprise: string;
+  participants: string;
+  message: string;
+  arrivalDate?: string;
+  departureDate?: string;
+  isFlexibleDates?: boolean;
+}) {
+  const slack = new WebClient(
+    "xoxb-6849747696358-9760541938085-k0eTSQfUmgWcEll5ySDX2AOR"
+  );
+  const channel = "momoamo-requests";
+
+  const blocks = [
+    {
+      type: "header",
+      text: {
+        type: "plain_text",
+        emoji: true,
+        text: `Nouvelle demande :  ${entreprise}  :tada:`,
+      },
+    },
+    {
+      type: "section",
+      fields: [
+        {
+          type: "mrkdwn",
+          text: `*Nom :* ${nom}`,
+        },
+        {
+          type: "mrkdwn",
+          text: `*Prénom :* ${prenom}`,
+        },
+        {
+          type: "mrkdwn",
+          text: `*Email :* ${email}`,
+        },
+        {
+          type: "mrkdwn",
+          text: `*Phone :* ${phone}`,
+        },
+      ],
+    },
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Nb. participants :* ${participants}`,
+      },
+    },
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Is Flexible Dates :* ${isFlexibleDates ? "Yes" : "No"}`,
+      },
+    },
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Date :* ${arrivalDate ?? ""} - ${departureDate ?? ""}`,
+      },
+    },
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Message :* \n\n${message}`,
+      },
+    },
+    {
+      type: "divider",
+    },
+  ];
+
+  try {
+    const result = await slack.chat.postMessage({
+      channel,
+      blocks,
+    });
+
+    console.log("Message sent:", result.ts);
+    return result;
+  } catch (error) {
+    console.error("Error:", JSON.stringify(error));
+    throw error;
+  }
+}

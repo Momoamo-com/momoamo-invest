@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   images: {
     unoptimized: true, // Disable image optimization for static export
     // domains: ['example.com'], // Add external image domains if needed
