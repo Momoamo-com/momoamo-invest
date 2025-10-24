@@ -69,7 +69,7 @@ export async function sendSlackMessage({
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*Is Flexible Dates :* ${isFlexibleDates ? "Yes" : "No"}`,
+        text: `*Dates flexibles ? :* ${isFlexibleDates ? "Oui" : "Non"}`,
       },
     },
     {
