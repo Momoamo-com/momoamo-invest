@@ -7,7 +7,7 @@ import Arrow_Svg from "@/assets/images/svgs/power_arrow.svg";
 import PowerFramer from "@/assets/images/power/frame.svg";
 import PowerLogo from "@/assets/images/power/logo.svg";
 // Images
-import PowerBanner from "@/assets/images/power/banner.jpg";
+import PoweredByKymono from "@/assets/images/power/by_kymono.webp";
 
 // Logo imports
 import Airbnb_Svg from "@/assets/images/logos/airbnb.svg";
@@ -140,7 +140,7 @@ const PowerSection = () => {
           aria-label="Logo et bannière Kymono"
         >
           <Image
-            src={PowerBanner.src}
+            src={PoweredByKymono.src}
             alt=""
             aria-hidden="true"
             width={644}
@@ -150,27 +150,6 @@ const PowerSection = () => {
           />
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 w-full h-full" />
-
-          <figcaption className="w-full h-full flex flex-col justify-center items-center absolute -top-10 left-0">
-            <Image
-              src={PowerLogo}
-              alt=""
-              aria-hidden="true"
-              width={273}
-              height={274}
-              className="w-[273px] h-[274px] pointer-events-none"
-              loading="lazy"
-            />
-            <Image
-              src={PowerFramer}
-              alt=""
-              aria-hidden="true"
-              width={273}
-              height={42}
-              className="w-[273px] h-auto absolute top-56 pointer-events-none"
-              loading="lazy"
-            />
-          </figcaption>
         </figure>
       </div>
       <figure
