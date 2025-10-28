@@ -148,8 +148,6 @@ const PowerSection = () => {
             className="h-full w-full object-cover md:block hidden pointer-events-none"
             loading="lazy"
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 w-full h-full" />
         </figure>
       </div>
       <figure
