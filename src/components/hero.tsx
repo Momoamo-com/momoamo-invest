@@ -104,19 +104,15 @@ const HeroSection = ({
               instagram
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/momoamo/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative z-10 uppercase leading-none tracking-wider font-nichrome text-lime-green text-[18px] font-bold no-underline cursor-pointer"
             >
               linkedin
             </a>
           </nav>
           <div className="justify-end items-center gap-6 hidden md:flex">
-            <button
-              type="button"
-              className="uppercase leading-none tracking-wider font-nichrome font-bold text-lime-green text-2xl w-[159px] h-[44px] border-[1px] border-lime-green transition-all duration-300 ease-in"
-            >
-              connexion
-            </button>
             <button
               type="button"
               onClick={() => setIsModal(true)}

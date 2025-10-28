@@ -341,7 +341,13 @@ const FooterSection = ({
               Kymono qui participent, nous avons une surprise très spéciale pour
               vous. Petit indice : ça ne se reproduira pas !
             </p>
-            <button className="!border-[2px] md:mt-6 mt-8 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome text-[26px] md:w-[228px] w-full h-[60px] flex justify-center items-center gap-2 transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green">
+            <a
+              href="https://substack.com/@momoamo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="!border-[2px] md:mt-6 mt-8 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome text-[26px] md:w-[228px] w-full h-[60px] flex justify-center items-center gap-2 transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green"
+              style={{ textDecoration: "none" }}
+            >
               BE FIRST TO JOIN{" "}
               <svg
                 width="20"
@@ -356,7 +362,7 @@ const FooterSection = ({
                   fill="currentColor"
                 />
               </svg>
-            </button>
+            </a>
           </header>
           <figure ref={imageRef} className="w-full">
             <Image
@@ -387,7 +393,7 @@ const FooterSection = ({
               </span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/momoamo/"
               target="_blank"
               rel="noopener noreferrer"
               className="relative cursor-pointer w-fit group touch-manipulation z-[50]"
