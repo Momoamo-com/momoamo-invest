@@ -112,22 +112,26 @@ const ModalReservation = ({
       entreprise,
       participants,
       message,
-      arrivalDate: arrivalDate ? Intl.DateTimeFormat('fr-FR').format(arrivalDate) : null,
-      departureDate: departureDate ? Intl.DateTimeFormat('fr-FR').format(departureDate) : null,
+      arrivalDate: arrivalDate
+        ? Intl.DateTimeFormat("fr-FR").format(arrivalDate)
+        : null,
+      departureDate: departureDate
+        ? Intl.DateTimeFormat("fr-FR").format(departureDate)
+        : null,
       isFlexibleDates,
     };
 
     try {
-      const res = await fetch('/api/handle-submission', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/handle-submission", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const data = await res.json();
-        throw new Error(data.error || 'Failed to send email or Slack message');
+        throw new Error(data.error || "Failed to send email or Slack message");
       }
-      setSuccessMessage('Votre demande a été envoyée avec succès !');
+      setSuccessMessage("Votre demande a été envoyée avec succès !");
       // Clear form fields
       setPrenom("");
       setNom("");
@@ -141,11 +145,11 @@ const ModalReservation = ({
       setIsFlexibleDates(false);
     } catch (err) {
       console.error(err);
-      setErrorMessage('Une erreur est survenue. Veuillez réessayer plus tard.');
+      setErrorMessage("Une erreur est survenue. Veuillez réessayer plus tard.");
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <AnimatePresence>
@@ -187,7 +191,7 @@ const ModalReservation = ({
                 Réserver <br /> votre offsite
               </h2>
               <form
-                className="flex-1 flex flex-col gap-3 lg:gap-5"
+                className="flex-1 flex flex-col gap-3 lg:gap-5 pb-[120px]"
                 onSubmit={handleSubmit}
               >
                 <div className="flex flex-col lg:flex-row items-center gap-5">
@@ -201,7 +205,7 @@ const ModalReservation = ({
                       placeholder="Prénom *"
                       name="prenom"
                       value={prenom}
-                      onChange={e => setPrenom(e.target.value)}
+                      onChange={(e) => setPrenom(e.target.value)}
                     />
                   </div>
                   <div className="w-full">
@@ -214,39 +218,39 @@ const ModalReservation = ({
                       placeholder="Nom *"
                       name="nom"
                       value={nom}
-                      onChange={e => setNom(e.target.value)}
+                      onChange={(e) => setNom(e.target.value)}
                     />
                   </div>
                 </div>
-                 <div className="flex flex-col lg:flex-row items-center gap-5">
-               <div className="w-full">
-                  <label htmlFor="email" className="sr-only">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    required
-                    type="email"
-                    placeholder="Mail *"
-                    name="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="w-full">
-                  <label htmlFor="phone" className="sr-only">
-                    Téléphone
-                  </label>
-                  <Input
-                    id="phone"
-                    required
-                    type="tel"
-                    placeholder="Téléphone *"
-                    name="phone"
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                  />
-                </div>
+                <div className="flex flex-col lg:flex-row items-center gap-5">
+                  <div className="w-full">
+                    <label htmlFor="email" className="sr-only">
+                      Email
+                    </label>
+                    <Input
+                      id="email"
+                      required
+                      type="email"
+                      placeholder="Mail *"
+                      name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="w-full">
+                    <label htmlFor="phone" className="sr-only">
+                      Téléphone
+                    </label>
+                    <Input
+                      id="phone"
+                      required
+                      type="tel"
+                      placeholder="Téléphone *"
+                      name="phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                    />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="entreprise" className="sr-only">
@@ -258,7 +262,7 @@ const ModalReservation = ({
                     placeholder="Nom de l'entreprise *"
                     name="entreprise"
                     value={entreprise}
-                    onChange={e => setEntreprise(e.target.value)}
+                    onChange={(e) => setEntreprise(e.target.value)}
                   />
                 </div>
                 <div>
@@ -272,7 +276,7 @@ const ModalReservation = ({
                     placeholder="Nombre de participants *"
                     name="participants"
                     value={participants}
-                    onChange={e => setParticipants(e.target.value)}
+                    onChange={(e) => setParticipants(e.target.value)}
                   />
                 </div>
                 <div className="flex items-center gap-2 mb-3">
@@ -396,20 +400,36 @@ const ModalReservation = ({
                     className="min-h-[190px]"
                     name="message"
                     value={message}
-                    onChange={e => setMessage(e.target.value)}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
                 <button
                   type="submit"
                   className="h-12 py-2 hover:!bg-transparent hover:text-black hover:border hover:border-black uppercase text-[#EEE5D7] bg-[#292222] font-bold font-nichrome md:text-[18px] text-[28px] w-full lg:w-fit px-4 flex justify-center items-center gap-2 relative"
                   disabled={loading}
-                  style={loading ? { cursor: 'not-allowed' } : {}}
+                  style={loading ? { cursor: "not-allowed" } : {}}
                 >
                   {loading && (
                     <span className="absolute inset-0 flex items-center justify-center z-10">
-                      <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                      <svg
+                        className="animate-spin h-6 w-6 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                        ></path>
                       </svg>
                     </span>
                   )}
@@ -418,12 +438,18 @@ const ModalReservation = ({
                   </span>
                 </button>
                 {errorMessage && (
-                  <div className="mt-3 text-red-600 text-base font-semibold" role="alert">
+                  <div
+                    className="mt-3 text-red-600 text-base font-semibold"
+                    role="alert"
+                  >
                     {errorMessage}
                   </div>
                 )}
                 {successMessage && (
-                  <div className="mt-3 text-green-600 text-base font-semibold" role="status">
+                  <div
+                    className="mt-3 text-green-600 text-base font-semibold"
+                    role="status"
+                  >
                     {successMessage}
                   </div>
                 )}
