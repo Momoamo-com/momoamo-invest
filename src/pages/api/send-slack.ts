@@ -2,7 +2,10 @@ import { isProdEnv } from "@/utils/env";
 import { WebClient } from "@slack/web-api";
 import { ReservationFormData } from "./types";
 
-const getSlackChannel = () => (isProdEnv ? "momoamo-requests" : "test-bot");
+const testChannelId = "C09NA93UQMB"; // test-bot
+const prodChannelId = "C09NE7EAHTQ"; // website-requests
+
+const getSlackChannel = () => (isProdEnv ? prodChannelId : testChannelId);
 
 export const sendSlackMessage = async ({
   prenom,
