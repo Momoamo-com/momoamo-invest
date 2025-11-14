@@ -10,6 +10,11 @@ RUN apk update && apk upgrade && npm install
 
 # Copy the rest of the app and build
 COPY . .
+
+# Accept build arg and set as env var for build
+ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
 RUN npm run build
 
 # Production image
