@@ -134,7 +134,7 @@ const HeroSection = ({
               ref={titleRef}
               className="w-full max-w-[745px] mx-auto flex flex-col justify-center items-center md:mt-[87px] mt-[83px] relative z-[3] md:px-0 px-4"
             >
-              <h1 className="hero-title uppercase text-center leading-none font-nichrome text-lime-green font-bold md:text-[72px] text-[58px] tracking-normal opacity-0 w-[367px] max-w-full md:w-full">
+              <h1 className="hero-title uppercase text-center leading-none font-nichrome text-lime-green font-bold md:text-[86px] text-[58px] tracking-normal opacity-0 w-[367px] max-w-full md:w-full">
                 Votre prochain offsite commence ici
               </h1>
               <p className="hero-title my-6 text-center text-lime-green font-general text-[18px] font-light tracking-normal opacity-0 w-[367px] max-w-full md:w-full">

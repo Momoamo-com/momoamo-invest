@@ -276,9 +276,11 @@ const PrivacyPolicyModal = ({
 const FooterSection = ({
   setIsScroll,
   setStop,
+  showJoinCommunity = true,
 }: {
   setIsScroll: React.Dispatch<React.SetStateAction<boolean>>;
   setStop: React.Dispatch<React.SetStateAction<boolean>>;
+  showJoinCommunity?: boolean;
 }) => {
   const { topContentRef, imageRef, linksRef } = useFooterAnimations();
   const router = useRouter();
@@ -289,6 +291,10 @@ const FooterSection = ({
   const lastStopRef = useRef<boolean>(false);
 
   useEffect(() => {
+    if (!showJoinCommunity) {
+      setStop(false);
+      return;
+    }
     const el = joinCommunitySectionRef.current;
     if (!el) return;
 
@@ -318,7 +324,7 @@ const FooterSection = ({
     observer.observe(el);
 
     return () => observer.disconnect();
-  }, [setStop]);
+  }, [setStop, showJoinCommunity]);
 
   return (
     <>
@@ -327,56 +333,58 @@ const FooterSection = ({
         aria-label="Site footer"
         ref={footerImageRef}
       >
-        <div
-          id="join-the-community"
-          ref={joinCommunitySectionRef}
-          className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full flex md:flex-row flex-col justify-between md:gap-[28px] gap-[32px]"
-        >
-          <header ref={topContentRef} className="w-full">
-            <h2 className="text-lime-green font-nichrome font-bold md:text-[86px] text-[58px] uppercase leading-none mb-[32px] md:mb-[24px]">
-              Join the <br /> community
-            </h2>
-            <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[23px] tracking-normal leading-[1.1] mb-[32px] md:mb-[24px]">
-              Pour les curieux, ceux qui partagent nos valeurs,
-              qui aiment les surprises et veulent suivre
-              l&apos;aventure : join the community !
-            </p>
-            <a
-              href="https://substack.com/@momoamo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="!border-[2px] md:mt-6 mt-8 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome text-[26px] md:w-[228px] w-full h-[60px] flex justify-center items-center gap-2 transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green"
-              style={{ textDecoration: "none" }}
-            >
-              BE FIRST TO JOIN{" "}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-[20px] h-[20px] scale-130"
+        {showJoinCommunity ? (
+          <div
+            id="join-the-community"
+            ref={joinCommunitySectionRef}
+            className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full flex md:flex-row flex-col justify-between md:gap-[28px] gap-[32px] md:mb-[124px] mb-16"
+          >
+            <header ref={topContentRef} className="w-full">
+              <h2 className="text-lime-green font-nichrome font-bold md:text-[86px] text-[58px] uppercase leading-none mb-[32px] md:mb-[24px]">
+                Join the <br /> community
+              </h2>
+              <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[23px] tracking-normal leading-[1.1] mb-[32px] md:mb-[24px]">
+                Pour les curieux, ceux qui partagent nos valeurs,
+                qui aiment les surprises et veulent suivre
+                l&apos;aventure : join the community !
+              </p>
+              <a
+                href="https://substack.com/@momoamo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="!border-[2px] md:mt-6 mt-8 uppercase text-dark-green border-lime-green bg-lime-green font-bold font-nichrome text-[26px] md:w-[228px] w-full h-[60px] flex justify-center items-center gap-2 transition-all duration-300 ease-in hover:!bg-dark-green hover:!text-lime-green hover:border-lime-green"
+                style={{ textDecoration: "none" }}
               >
-                <path
-                  d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </a>
-          </header>
-          <figure ref={imageRef} className="w-full">
-            <Image
-              src={Img3.src}
-              alt=""
-              width={357}
-              height={465}
-              className="w-full h-auto aspect-[698/517] object-cover pointer-events-none"
-              aria-hidden="true"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-        <div className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full md:mt-[124px] mt-16 flex md:flex-row flex-col justify-between md:gap-7 gap-8">
+                BE FIRST TO JOIN{" "}
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[20px] h-[20px] scale-130"
+                >
+                  <path
+                    d="M12 4L10.59 5.41L16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </header>
+            <figure ref={imageRef} className="w-full">
+              <Image
+                src={Img3.src}
+                alt=""
+                width={357}
+                height={465}
+                className="w-full h-auto aspect-[698/517] object-cover pointer-events-none"
+                aria-hidden="true"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        ) : null}
+        <div className="max-w-[1360px] px-4 xl:px-14 mx-auto w-full flex md:flex-row flex-col justify-between md:gap-7 gap-8">
           <nav
             className="w-full flex flex-col relative z-[50]"
             aria-label="Social media links"
