@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import type { RefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import {
+  useScrollSlideUp,
+  useScrollStaggerIn,
+} from "@/animations/scrollAnimations";
 import PerformanceImage from "@/assets/images/house/house-1.jpg";
 
 const performanceCards = [
@@ -28,19 +33,28 @@ const performanceCards = [
 ];
 
 const InvestPerformanceSection = () => {
+  const titleRef = useScrollSlideUp();
+  const gridRef = useScrollStaggerIn(0.12);
+  const mobileRef = useScrollSlideUp(0.1);
   return (
     <section
       aria-label="Performance financière Momoamo"
       className="w-full bg-gray-green md:py-[120px] py-[64px]"
     >
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
-        <h2 className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
+        <h2
+          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]"
+          ref={titleRef as RefObject<HTMLHeadingElement>}
+        >
           AU-DELÀ DE LA PERFORMANCE FINANCIÈRE
         </h2>
       </div>
 
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4">
-        <div className="mt-12 md:grid hidden md:grid-cols-3 gap-8">
+        <div
+          className="mt-12 md:grid hidden md:grid-cols-3 gap-8"
+          ref={gridRef as RefObject<HTMLDivElement>}
+        >
           {performanceCards.map((card) => (
             <article key={card.title} className="flex flex-col">
               <div className="w-full overflow-hidden bg-[#1a1614]">
@@ -63,7 +77,10 @@ const InvestPerformanceSection = () => {
             </article>
           ))}
         </div>
-        <div className="mt-12 md:hidden">
+        <div
+          className="mt-12 md:hidden"
+          ref={mobileRef as RefObject<HTMLDivElement>}
+        >
           <Swiper
             slidesPerView="auto"
             spaceBetween={16}

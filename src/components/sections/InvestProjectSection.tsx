@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import type { RefObject } from "react";
+import { useScrollSlideUp } from "@/animations/scrollAnimations";
 import HouseImage from "@/assets/images/house/house-2.jpg";
 
 const projectDetails = [
@@ -10,14 +14,22 @@ const projectDetails = [
 ];
 
 const InvestProjectSection = () => {
+  const titleRef = useScrollSlideUp();
+  const imageRef = useScrollSlideUp(0.1);
   return (
     <section aria-label="Projet Momoamo" className="w-full bg-gray-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
-        <h2 className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
+        <h2
+          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]"
+          ref={titleRef as RefObject<HTMLHeadingElement>}
+        >
           NOTRE PREMIER PROJET
         </h2>
 
-        <div className="relative mt-10 md:mt-12">
+        <div
+          className="relative mt-10 md:mt-12"
+          ref={imageRef as RefObject<HTMLDivElement>}
+        >
           <Image
             src={HouseImage}
             alt=""

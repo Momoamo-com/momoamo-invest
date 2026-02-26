@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import type { RefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import { useScrollSlideUp } from "@/animations/scrollAnimations";
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
@@ -46,6 +48,9 @@ const InvestModelSection = () => {
   const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const { openModal } = useInvestWaitlistModal();
+  const introRef = useScrollSlideUp();
+  const listRef = useScrollSlideUp(0.1);
+  const mobileRef = useScrollSlideUp(0.1);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -79,7 +84,7 @@ const InvestModelSection = () => {
     <section aria-label="Modèle Momoamo" className="w-full bg-dark-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
         <div className="grid md:grid-cols-[1fr_1fr] gap-12">
-          <div className="w-full">
+          <div className="w-full" ref={introRef as RefObject<HTMLDivElement>}>
             <p className="text-lime-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
               UN MODÈLE UNIQUE
             </p>
@@ -113,7 +118,10 @@ const InvestModelSection = () => {
             </button>
           </div>
 
-          <div className="w-full relative hidden md:block">
+          <div
+            className="w-full relative hidden md:block"
+            ref={listRef as RefObject<HTMLDivElement>}
+          >
             <div className="absolute left-[14px] top-2 bottom-2 w-px bg-lime-green/30" />
             <div className="flex flex-col gap-[72px]">
               {modelItems.map((item, index) => (
@@ -155,7 +163,10 @@ const InvestModelSection = () => {
           </div>
         </div>
 
-        <div className="md:hidden mt-10">
+        <div
+          className="md:hidden mt-10"
+          ref={mobileRef as RefObject<HTMLDivElement>}
+        >
           <div className="relative w-full h-px bg-lime-green/30">
             <span className="absolute -top-[4px] left-0 h-[8px] w-[8px] rounded-full bg-lime-green" />
             <span className="absolute -top-[4px] right-0 h-[8px] w-[8px] rounded-full bg-lime-green" />

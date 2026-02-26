@@ -1,3 +1,7 @@
+"use client";
+
+import type { RefObject } from "react";
+import { useScrollSlideUp } from "@/animations/scrollAnimations";
 import { InfiniteMovingLogo } from "@/components/ui/infinite-moving-logo";
 
 import Airbnb_Svg from "@/assets/images/logos/airbnb.svg";
@@ -23,14 +27,22 @@ const logos = [
 ];
 
 const InvestLogosSection = () => {
+  const titleRef = useScrollSlideUp();
+  const logosRef = useScrollSlideUp(0.1);
   return (
     <section aria-label="Logo presse Momoamo" className="w-full bg-dark-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
-        <h2 className="text-center text-lime-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
+        <h2
+          className="text-center text-lime-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]"
+          ref={titleRef as RefObject<HTMLHeadingElement>}
+        >
           ILS PARLENT DE NOUS
         </h2>
 
-        <div className="mt-10 md:mt-12">
+        <div
+          className="mt-10 md:mt-12"
+          ref={logosRef as RefObject<HTMLDivElement>}
+        >
           <InfiniteMovingLogo speed="fast" aria-roledescription="carousel">
             {logos.map((item, index) => (
               <span

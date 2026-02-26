@@ -1,9 +1,14 @@
  "use client";
 
 import Image from "next/image";
+import type { RefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import {
+  useScrollSlideUp,
+  useScrollStaggerIn,
+} from "@/animations/scrollAnimations";
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 
@@ -34,10 +39,17 @@ const adventureCards = [
 
 const InvestAdventureSection = () => {
   const { openModal } = useInvestWaitlistModal();
+  const titleRef = useScrollSlideUp();
+  const contentRef = useScrollSlideUp(0.1);
+  const gridRef = useScrollStaggerIn(0.12);
+  const mobileRef = useScrollSlideUp(0.1);
   return (
     <section aria-label="Aventure Momoamo" className="w-full bg-gray-green md:py-[120px] py-[64px]">
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
-        <div className="max-w-full w-[820px]">
+        <div
+          className="max-w-full w-[820px]"
+          ref={titleRef as RefObject<HTMLDivElement>}
+        >
           <p className="text-black-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
             UNE AVENTURE AMBITIEUSE
           </p>
@@ -51,6 +63,7 @@ const InvestAdventureSection = () => {
         </div>
         <div
           className="ms-auto md:my-[72px] mb-[32px] mt-[24px] w-[783px] max-w-full"
+          ref={contentRef as RefObject<HTMLDivElement>}
         >
           <p className="text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1]">
             Nous ne menons pas de simples opérations immobilières. Momoamo
@@ -77,7 +90,10 @@ const InvestAdventureSection = () => {
       </div>
 
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4">
-        <div className="mt-12 md:grid hidden md:grid-cols-3 gap-8">
+        <div
+          className="mt-12 md:grid hidden md:grid-cols-3 gap-8"
+          ref={gridRef as RefObject<HTMLDivElement>}
+        >
           {adventureCards.map((card) => (
             <article key={card.title} className="flex flex-col">
               <div className="w-full overflow-hidden bg-[#1a1614]">
@@ -100,7 +116,10 @@ const InvestAdventureSection = () => {
             </article>
           ))}
         </div>
-        <div className="mt-12 md:hidden">
+        <div
+          className="mt-12 md:hidden"
+          ref={mobileRef as RefObject<HTMLDivElement>}
+        >
           <Swiper
             slidesPerView="auto"
             spaceBetween={16}

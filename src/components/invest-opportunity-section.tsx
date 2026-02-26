@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import type { RefObject } from "react";
 
+import {
+  useScrollSlideUp,
+  useScrollStaggerIn,
+} from "@/animations/scrollAnimations";
 import { useInvestWaitlistModal } from "@/components/modals/InvestWaitlistModalProvider";
 import Button_Arrow_Svg from "@/assets/images/svgs/arrow_forward.svg";
 import Bed_Svg from "@/assets/images/svgs/bed.svg";
@@ -46,13 +51,19 @@ const opportunityItems = [
 
 const InvestOpportunitySection = () => {
   const { openModal } = useInvestWaitlistModal();
+  const titleRef = useScrollSlideUp();
+  const gridRef = useScrollStaggerIn(0.12);
+  const ctaRef = useScrollSlideUp(0.1);
   return (
     <section
       aria-label="Opportunité d’investissement"
       className="w-full bg-gray-green"
     >
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
-        <header className="max-w-[780px]">
+        <header
+          className="max-w-[780px]"
+          ref={titleRef as RefObject<HTMLHeadingElement>}
+        >
           <p className="text-black-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
             L’OPPORTUNITÉ D’INVESTISSEMENT
           </p>
@@ -66,7 +77,10 @@ const InvestOpportunitySection = () => {
           </p>
         </header>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-x-10 gap-y-12">
+        <div
+          className="mt-12 grid md:grid-cols-3 gap-x-10 gap-y-12"
+          ref={gridRef as RefObject<HTMLDivElement>}
+        >
           {opportunityItems.map((item, index) => (
             <article key={item.label} className="flex flex-col">
               <Image
@@ -96,7 +110,10 @@ const InvestOpportunitySection = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
+        <div
+          className="mt-16 text-center"
+          ref={ctaRef as RefObject<HTMLDivElement>}
+        >
           <p className="text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal leading-[1.1]">
             Inscrivez vous pour le webinar de lancement de notre seconde opération
           </p>

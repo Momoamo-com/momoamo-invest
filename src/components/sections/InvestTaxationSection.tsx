@@ -1,3 +1,11 @@
+"use client";
+
+import type { RefObject } from "react";
+import {
+  useScrollSlideUp,
+  useScrollStaggerIn,
+} from "@/animations/scrollAnimations";
+
 const taxationItems = [
   {
     label: "150-0 B TER",
@@ -14,10 +22,16 @@ const taxationItems = [
 ];
 
 const InvestTaxationSection = () => {
+  const titleRef = useScrollSlideUp();
+  const listRef = useScrollStaggerIn(0.12);
+  const footnoteRef = useScrollSlideUp(0.1);
   return (
     <section aria-label="Fiscalité Momoamo" className="w-full bg-[#5a2c2b]">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
-        <div className="w-[820px] max-w-full">
+        <div
+          className="w-[820px] max-w-full"
+          ref={titleRef as RefObject<HTMLDivElement>}
+        >
           <h2 className="text-[#ff7a5a] font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
             OPTIMISEZ VOTRE FISCALITÉ GRÂCE À MOMOAMO
           </h2>
@@ -26,7 +40,10 @@ const InvestTaxationSection = () => {
           </p>
         </div>
 
-        <div className="mt-10 border-t border-[#ff7a5a]/60">
+        <div
+          className="mt-10 border-t border-[#ff7a5a]/60"
+          ref={listRef as RefObject<HTMLDivElement>}
+        >
           {taxationItems.map((item) => (
             <div
               key={item.label}
@@ -42,7 +59,10 @@ const InvestTaxationSection = () => {
           ))}
         </div>
 
-        <p className="mt-10 text-[#ff7a5a]/80 font-general font-light text-[20px] leading-[1.35] italic w-[1070px] max-w-full">
+        <p
+          className="mt-10 text-[#ff7a5a]/80 font-general font-light text-[20px] leading-[1.35] italic w-[1070px] max-w-full"
+          ref={footnoteRef as RefObject<HTMLParagraphElement>}
+        >
           Les informations ci-dessus sont fournies à titre indicatif et ne constituent pas un conseil fiscal ou juridique personnalisé. Le traitement fiscal dépend de la situation individuelle de chaque client et est susceptible d’évoluer dans le temps.
         </p>
       </div>
