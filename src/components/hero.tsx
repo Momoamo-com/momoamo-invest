@@ -113,6 +113,12 @@ const HeroSection = ({
             </a>
           </nav>
           <div className="justify-end items-center gap-6 hidden md:flex">
+            <Link
+              href="/invest"
+              className="uppercase leading-none tracking-wider font-nichrome font-bold hover:!text-dark-green text-2xl w-[159px] h-[44px] border-[1px] hover:!bg-lime-green bg-dark-green text-lime-green border-lime-green transition-all duration-300 ease-in inline-flex items-center justify-center"
+            >
+              INVESTIR
+            </Link>
             <button
               type="button"
               onClick={() => setIsModal(true)}

@@ -189,12 +189,12 @@ const InvestHero = () => {
               </Link>
             </div>
             <div className="flex justify-end items-center gap-3">
-              <button
-                type="button"
-                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[18px] w-[159px] h-[44px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main"
+              <Link
+                href="/invest"
+                className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[18px] w-[159px] h-[44px] border-[1px] bg-transparent border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-secondary hover:!text-offsite-main justify-center items-center inline-flex"
               >
-                CONNEXION
-              </button>
+                INVESTIR
+              </Link>
               <button
                 type="button"
                 className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main text-[18px] w-[176px] h-[44px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
@@ -448,13 +448,13 @@ const InvestHero = () => {
               </button>
             </div>
             <nav className="mt-12 flex flex-col gap-6" aria-label="Menu mobile">
-              <button
-                type="button"
+              <Link
+                href="/invest"
                 className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[20px] text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
-                CONNEXION
-              </button>
+                INVESTIR
+              </Link>
               <button
                 type="button"
                 className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[20px] text-left"

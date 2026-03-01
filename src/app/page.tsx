@@ -6,8 +6,10 @@ import VacationSection from "@/components/vacation";
 import HouseSection from "@/components/house";
 import PlaceSection from "@/components/place";
 import PowerSection from "@/components/power";
+import HomeInvestTeaserSection from "@/components/sections/HomeInvestTeaserSection";
 import FAQSection from "@/components/faq";
 import FooterSection from "@/components/footer";
+import InvestWaitlistModalProvider from "@/components/modals/InvestWaitlistModalProvider";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -33,7 +35,8 @@ const Home = () => {
   }, [isScroll]);
 
   return (
-    <main>
+    <InvestWaitlistModalProvider>
+      <main>
       <div className="bg-dark-green overflow-hidden">
         {/* Hero Section */}
         <HeroSection isScroll={isScroll} stop={stop} />
@@ -64,6 +67,10 @@ const Home = () => {
         <PlaceSection />
       </div>
 
+      <div className="bg-gray-green overflow-hidden">
+        <HomeInvestTeaserSection />
+      </div>
+
       <div className="bg-power-main overflow-hidden">
         {/* PowerSection */}
         <PowerSection />
@@ -78,7 +85,8 @@ const Home = () => {
         {/* FooterSection */}
         <FooterSection setIsScroll={setIsScroll} setStop={setStop} />
       </div>
-    </main>
+      </main>
+    </InvestWaitlistModalProvider>
   );
 };
 
