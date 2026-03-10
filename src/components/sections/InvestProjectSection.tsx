@@ -7,10 +7,10 @@ import HouseImage from "@/assets/images/house/house-2.jpg";
 
 const projectDetails = [
   { label: "Lieu", value: "Normandie" },
-  { label: "Projet global", value: "6m€" },
+  { label: "Projet global", value: "6,6m€" },
   { label: "Acquisition", value: "Mars 2024" },
   { label: "Ouverture", value: "Mars 2025" },
-  { label: "Rendement locatif net", value: "20% (900k€/an)" },
+  { label: "Rendement locatif net", value: "1,3m€ / an" },
 ];
 
 const InvestProjectSection = () => {

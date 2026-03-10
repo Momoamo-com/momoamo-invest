@@ -16,13 +16,13 @@ const aboutCards = [
     image: PortraitImage,
     title: "OLIVIER, KYMONO",
     description:
-      "CEO & fondateur de Kymono, Forbes 30under30 (2019), 10k+ clients & 300+ séminaires organisés.",
+      "En quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisés dont certains sur des concepts vus à la télé.",
   },
   {
     image: PortraitImage,
     title: "AISSA, ENKY",
     description:
-      "Fondateur d’Edebex (fintech - 1Md€+ de volume d’affaires), puis CEO & fondateur d’Enky, solution de mobilier haut de gamme et durable, par abonnement.",
+      "En 2013, Aissa cofonde Edebex, une fintech qui totalise aujourd’hui plus d’1Md€+ de volume d’affaires. Il crée en 2019 Enky une entreprise à la frontière de la fintech et du FaaS (Mobilier par abonnement) qui a déjà séduit plus de 180 clients et 4700 investisseurs.",
   },
 ];
 

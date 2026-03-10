@@ -13,34 +13,35 @@ import Bed_Svg from "@/assets/images/svgs/bed.svg";
 
 const opportunityItems = [
   {
-    label: "Rendement attractif et prévisible*",
-    headline: "12% DE TRI ANNUEL NET DE FRAIS*",
+    label: "Rendement Cible*",
+    headline: "TRI 12% / an, net de frais*",
     description: "Plus value foncière et forte rentabilité locative",
     footnote:
-      "*Les prévisions ne constituent pas un indicateur fiable quant aux performances futures.",
+      "Les performances passées ne préjugent pas des performances futures",
   },
   {
-    label: "Durée d’engagement",
+    label: "Horizon",
     headline: "3 À 5 ANS",
     description:
       "Le temps d’optimiser les conditions du refinancement bancaire",
   },
   {
-    label: "Revenus réguliers",
-    headline: "JUSQU’À 8% D’INTÉRÊTS VERSÉ MENSUELLEMENT",
+    label: "Distribution",
+    headline: "Mensuelle ou In-fine*",
     description: "Directement issus des revenus de l’activité",
+    footnote2: "*selon le choix de l’investisseur",
   },
   {
     label: "Des garanties solides",
     headline: "UNE DOUBLE PROTECTION",
     description:
-      "Vous êtes actionnaire de la société d’exploitation et bénéficiez d’une hypothèque sur le bien",
+      "Vous êtes associés de la société projet, avec une garantie sur les titres Momoamo",
   },
   {
     label: "Sortie claire dès le départ",
     headline: "C’EST NOUS QUI VOUS RACHETONS",
     description:
-      "Refinancement bancaire avec rachat des investisseurs par l’opérateur.",
+      "Refinancement bancaire avec rachat des investisseurs par Momoamo.",
   },
   {
     label: "Des avantages en nature",
@@ -102,8 +103,13 @@ const InvestOpportunitySection = () => {
                 {item.description}
               </p>
               {index === 0 && item.footnote ? (
-                <p className="mt-[8px] text-black-green font-general font-light text-[20px] leading-[1.4] italic">
+                <p className="mt-[8px] text-black-green font-general font-light text-[12px] leading-[1.4] italic">
                   {item.footnote}
+                </p>
+              ) : null}
+              {"footnote2" in item && item.footnote2 ? (
+                <p className="mt-[8px] text-black-green font-general font-light text-[12px] leading-[1.4] italic">
+                  {item.footnote2}
                 </p>
               ) : null}
             </article>

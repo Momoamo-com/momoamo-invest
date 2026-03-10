@@ -24,13 +24,13 @@ const performanceCards = [
     image: PerformanceImage2,
     title: "20% DE RÉDUCTION À VIE",
     description:
-      "En tant qu'investisseur, vous profitez de 20% de réduction, à vie, sur l'ensemble de nos maisons, pour vos vacances, mariages et stages en tous genre.",
+      "En tant qu'investisseur, vous profitez de 20% de réduction, à vie, sur l'ensemble de nos maisons, pour vos vacances, mariages et stages en tout genre.",
   },
   {
     image: PerformanceImage3,
     title: "20% SUR LES SÉMINAIRES D'ENTREPRISE",
     description:
-      "Que vous soyez dirigeant ou salarié, profitez de 20% de réduction sur votre séminaire dans nos maisons et faite vivre une expérience unique à votre entreprise !",
+      "Que vous soyez dirigeant ou salarié, profitez de 20% de réduction sur votre séminaire dans nos maisons et faites vivre une expérience unique à votre entreprise !",
   },
 ];
 

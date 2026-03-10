@@ -128,7 +128,7 @@ const MomoamoLogo = ({ className }: { className?: string }) => {
 
 const InvestHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [investmentValue, setInvestmentValue] = useState(20000);
+  const [investmentValue, setInvestmentValue] = useState(100000);
   const [isHeroVisualReady, setHeroVisualReady] = useState(false);
   const { openModal } = useInvestWaitlistModal();
   const heroVisualRef = useRef<HTMLDivElement>(null);
@@ -199,7 +199,7 @@ const InvestHero = () => {
                 type="button"
                 className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-main text-[18px] w-[176px] h-[44px] border-[1px] bg-offsite-secondary border-offsite-secondary transition-all duration-300 ease-in hover:!bg-offsite-main hover:!text-offsite-secondary"
               >
-                PRÉ-RÉSERVER
+                RÉSERVER
               </button>
             </div>
           </div>
@@ -246,7 +246,7 @@ const InvestHero = () => {
                 maisons d&apos;exception
               </h1>
               <p className="text-offsite-secondary font-general font-light text-[18px] leading-[1.3] mt-6 max-w-[520px]">
-                Investissez dans nos projets immobiliers uniques et contribuez à
+                Investissez dans nos clubs deal immobiliers uniques et contribuez à
                 la création d&apos;espaces inspirants pour séjours professionnels.
               </p>
 
@@ -372,7 +372,7 @@ const InvestHero = () => {
                       <div className="mt-4">
                         <input
                           type="range"
-                          min={5000}
+                          min={10000}
                           max={100000}
                           step={500}
                           value={investmentValue}
@@ -460,7 +460,7 @@ const InvestHero = () => {
                 className="uppercase leading-none tracking-wider font-nichrome font-bold text-offsite-secondary text-[20px] text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
-                PRÉ-RÉSERVER
+                RÉSERVER
               </button>
               <a
                 href="https://www.instagram.com/momoamo_places/"

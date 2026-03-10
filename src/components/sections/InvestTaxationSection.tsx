@@ -36,7 +36,7 @@ const InvestTaxationSection = () => {
             OPTIMISEZ VOTRE FISCALITÉ GRÂCE À MOMOAMO
           </h2>
           <p className="text-[#ff7a5a] font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1] mt-6">
-            Nos projets concilient rendement et dispositifs fiscaux adaptés pour structurer votre patrimoine.
+            Nos clubs deal
           </p>
         </div>
 

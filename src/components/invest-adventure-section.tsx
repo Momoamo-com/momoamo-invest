@@ -33,7 +33,7 @@ const adventureCards = [
     image: AdventureImage3,
     title: "UNE ÉQUIPE TAILLÉE POUR L’EXÉCUTION",
     description:
-      "Les fondateurs cumulent plusieurs succès entrepreneuriaux, une expertise séminaire (Kymono, +300 séminaires, 6 ans au contact des décideurs) et une maîtrise du mobilier design et du financement participatif (Enky, +150 projets financés).",
+      "Les fondateurs cumulent plusieurs succès entrepreneuriaux, une expertise séminaire (Kymono, +300 séminaires, 6 ans au contact des décideurs) et une maîtrise du mobilier design et du financement participatif (Enky, +180 projets financés).",
   },
 ];
 

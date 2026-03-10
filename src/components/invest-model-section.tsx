@@ -89,7 +89,8 @@ const InvestModelSection = () => {
               UN MODÈLE UNIQUE
             </p>
             <h2 className="text-lime-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px] mt-4">
-              VALUE ADD + GESTION LOCATIVE :
+              <span className="whitespace-nowrap">VALUE ADD + GESTION LOCATIVE :</span>
+              <br />
               LE MEILLEUR DES DEUX MONDES
             </h2>
             <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1] mt-[24px] mb-[48px]">
@@ -97,8 +98,7 @@ const InvestModelSection = () => {
               gestionnaire immobilier.
             </p>
             <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1]">
-              Investir dans nos projets c&apos;est profiter d&apos;un modèle intégré
-              qui crée de la valeur à chaque étape.
+              Investir dans nos clubs deal c&apos;est profiter d&apos;un modèle intégré qui crée de la valeur à chaque étape.
             </p>
             <button
               type="button"
