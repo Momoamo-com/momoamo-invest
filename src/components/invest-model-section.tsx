@@ -84,7 +84,7 @@ const InvestModelSection = () => {
     <section aria-label="Modèle Momoamo" className="w-full bg-dark-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
         <div className="grid md:grid-cols-[1fr_1fr] gap-12">
-          <div className="w-full md:sticky md:top-24 md:self-start" ref={introRef as RefObject<HTMLDivElement>}>
+          <div className="w-full" ref={introRef as RefObject<HTMLDivElement>}>
             <p className="text-lime-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
               UN MODÈLE UNIQUE
             </p>
