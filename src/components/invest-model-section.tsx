@@ -165,18 +165,21 @@ const InvestModelSection = () => {
         </div>
 
         <div
-          className="md:hidden mt-10"
+          className="md:hidden mt-10 overflow-hidden"
           ref={mobileRef as RefObject<HTMLDivElement>}
         >
-          <div className="relative w-full h-px bg-lime-green/30">
-            <span className="absolute -top-[4px] left-0 h-[8px] w-[8px] rounded-full bg-lime-green" />
-            <span className="absolute -top-[4px] right-0 h-[8px] w-[8px] rounded-full bg-lime-green" />
-          </div>
           <div className="mt-8">
-            <Swiper spaceBetween={24} slidesPerView={1}>
+            <Swiper
+              slidesPerView="auto"
+              spaceBetween={16}
+              style={{ paddingRight: "0px", overflow: "visible" }}
+            >
               {modelItems.map((item) => (
                 <SwiperSlide key={item.title}>
-                  <div className="bg-transparent">
+                  <div className="bg-transparent pt-[24px]">
+                    <div className="relative mt-[-24px] mb-[24px] h-px bg-lime-green/30 w-[calc(100%+16px)]">
+                      <span className="absolute -top-[4px] left-0 h-[8px] w-[8px] rounded-full bg-lime-green" />
+                    </div>
                     <Image
                       src={item.icon}
                       alt=""

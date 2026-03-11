@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import type { RefObject } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 import {
   useScrollSlideUp,
@@ -65,6 +67,7 @@ const InvestOpportunitySection = () => {
   const { openModal } = useInvestWaitlistModal();
   const titleRef = useScrollSlideUp();
   const gridRef = useScrollStaggerIn(0.12);
+  const mobileRef = useScrollSlideUp(0.1);
   const ctaRef = useScrollSlideUp(0.1);
   return (
     <section
@@ -90,7 +93,7 @@ const InvestOpportunitySection = () => {
         </header>
 
         <div
-          className="mt-[48px] md:mt-[62px] grid md:grid-cols-3 gap-x-[56px] gap-y-[32px] md:gap-y-[62px]"
+          className="mt-[48px] md:mt-[62px] hidden md:grid md:grid-cols-3 gap-x-[56px] gap-y-[32px] md:gap-y-[62px]"
           ref={gridRef as RefObject<HTMLDivElement>}
         >
           {opportunityItems.map((item, index) => (
@@ -125,6 +128,49 @@ const InvestOpportunitySection = () => {
               ) : null}
             </article>
           ))}
+        </div>
+
+        <div className="mt-[32px] md:hidden" ref={mobileRef as RefObject<HTMLDivElement>}>
+          <Swiper
+            slidesPerView="auto"
+            spaceBetween={16}
+            style={{ paddingRight: "0px", overflow: "visible" }}
+          >
+            {opportunityItems.map((item, index) => (
+              <SwiperSlide key={item.label} className="!w-[80vw]">
+                <article className="flex flex-col">
+                  <Image
+                    src={item.image}
+                    alt=""
+                    aria-hidden="true"
+                    width={40}
+                    height={40}
+                    className="w-[40px] h-[40px] pointer-events-none"
+                    loading="lazy"
+                  />
+                  <p className="my-[24px] text-black-green font-normal font-nichrome text-[18px] tracking-normal leading-[1.1]">
+                    {item.label}
+                  </p>
+                  <h3 className="text-black-green font-nichrome font-bold uppercase text-[32px] leading-tight">
+                    {item.headline}
+                  </h3>
+                  <p className="mt-[8px] text-black-green font-general font-light text-[14px] leading-[1.4]">
+                    {item.description}
+                  </p>
+                  {index === 0 && item.footnote ? (
+                    <p className="mt-[8px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
+                      {item.footnote}
+                    </p>
+                  ) : null}
+                  {"footnote2" in item && item.footnote2 ? (
+                    <p className="mt-[8px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
+                      {item.footnote2}
+                    </p>
+                  ) : null}
+                </article>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         <div

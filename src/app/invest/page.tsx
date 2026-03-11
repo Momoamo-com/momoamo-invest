@@ -8,6 +8,7 @@ import InvestOpportunitySection from "@/components/invest-opportunity-section";
 import InvestLogosSection from "@/components/sections/InvestLogosSection";
 import InvestAboutSection from "@/components/sections/InvestAboutSection";
 import InvestCtaSection from "@/components/sections/InvestCtaSection";
+import InvestWebinarCtaSection from "@/components/sections/InvestWebinarCtaSection";
 import InvestPerformanceSection from "@/components/sections/InvestPerformanceSection";
 import InvestProjectSection from "@/components/sections/InvestProjectSection";
 import InvestTaxationSection from "@/components/sections/InvestTaxationSection";
@@ -43,6 +44,7 @@ const InvestPage = () => {
           <InvestHero />
           <InvestStatsSection />
           <InvestOpportunitySection />
+          <InvestWebinarCtaSection />
           <InvestModelSection />
           <InvestAdventureSection />
           <InvestTaxationSection />
