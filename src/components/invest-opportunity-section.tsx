@@ -172,7 +172,7 @@ const InvestOpportunitySection = () => {
             ))}
           </Swiper>
         </div>
-
+{/* 
         <div
           className="mt-16 text-center"
           ref={ctaRef as RefObject<HTMLDivElement>}
@@ -196,7 +196,7 @@ const InvestOpportunitySection = () => {
               aria-hidden="true"
             />
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
