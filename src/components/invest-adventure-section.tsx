@@ -44,7 +44,7 @@ const InvestAdventureSection = () => {
   const gridRef = useScrollStaggerIn(0.12);
   const mobileRef = useScrollSlideUp(0.1);
   return (
-    <section aria-label="Aventure Momoamo" className="w-full bg-gray-green md:py-[60px] py-[40px]">
+    <section aria-label="Aventure Momoamo" className="w-full bg-gray-green md:py-[60px] py-[40px] overflow-hidden">
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
         <div
           className="max-w-full w-[820px]"

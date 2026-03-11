@@ -26,7 +26,7 @@ const InvestTaxationSection = () => {
   const listRef = useScrollStaggerIn(0.12);
   const footnoteRef = useScrollSlideUp(0.1);
   return (
-    <section aria-label="Fiscalité Momoamo" className="w-full bg-[#5a2c2b]">
+    <section aria-label="Fiscalité Momoamo" className="w-full bg-[#5a2c2b] overflow-hidden">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[100px] py-[40px]">
         <div
           className="w-[650px] max-w-full"

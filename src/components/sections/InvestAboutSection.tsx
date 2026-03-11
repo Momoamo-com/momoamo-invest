@@ -34,7 +34,7 @@ const InvestAboutSection = () => {
   return (
     <section
       aria-label="About us Momoamo"
-      className="w-full bg-offsite-main md:py-[100px] py-[40px]"
+      className="w-full bg-offsite-main md:py-[100px] py-[40px] overflow-hidden"
     >
       <div
         className="max-w-[1360px] xl:px-14 px-4 mx-auto"

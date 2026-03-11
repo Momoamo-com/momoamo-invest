@@ -329,7 +329,7 @@ const FooterSection = ({
   return (
     <>
       <footer
-        className="w-full mx-auto relative md:pt-[123px] pt-[64px]"
+        className="w-full mx-auto relative md:pt-[123px] pt-[64px] overflow-hidden"
         aria-label="Site footer"
         ref={footerImageRef}
       >

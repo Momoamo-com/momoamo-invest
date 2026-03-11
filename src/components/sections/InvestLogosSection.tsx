@@ -30,7 +30,7 @@ const InvestLogosSection = () => {
   const titleRef = useScrollSlideUp();
   const logosRef = useScrollSlideUp(0.1);
   return (
-    <section aria-label="Logo presse Momoamo" className="w-full bg-dark-green">
+    <section aria-label="Logo presse Momoamo" className="w-full bg-dark-green overflow-hidden">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[140px] py-[32px]">
         <h2
           className="text-center text-lime-green font-nichrome font-bold uppercase leading-none md:text-[96px] text-[28px]"

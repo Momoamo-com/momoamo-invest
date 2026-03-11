@@ -69,7 +69,7 @@ const InvestOpportunitySection = () => {
   return (
     <section
       aria-label="Opportunité d’investissement"
-      className="w-full bg-gray-green"
+      className="w-full bg-gray-green overflow-hidden"
     >
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
         <header

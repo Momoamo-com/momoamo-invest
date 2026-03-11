@@ -41,7 +41,7 @@ const InvestPerformanceSection = () => {
   return (
     <section
       aria-label="Performance financière Momoamo"
-      className="w-full bg-gray-green md:py-[100px] py-[48px]"
+      className="w-full bg-gray-green md:py-[100px] py-[48px] overflow-hidden"
     >
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
         <h2

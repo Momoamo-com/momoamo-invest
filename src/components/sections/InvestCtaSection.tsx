@@ -17,7 +17,7 @@ const InvestCtaSection = () => {
   const contentRef = useScrollSlideUp();
   const imagesRef = useStaggerIn({ start: "top 75%" });
   return (
-    <section className="w-full bg-gray-green">
+    <section className="w-full bg-gray-green overflow-hidden">
       <div className="relative overflow-hidden max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[140px] pt-[200px] pb-[250px]">
         <div
           className="relative z-10 flex flex-col items-center text-center max-w-[760px] mx-auto"

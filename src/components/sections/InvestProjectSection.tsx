@@ -17,7 +17,7 @@ const InvestProjectSection = () => {
   const titleRef = useScrollSlideUp();
   const imageRef = useScrollSlideUp(0.1);
   return (
-    <section aria-label="Projet Momoamo" className="w-full bg-gray-green">
+    <section aria-label="Projet Momoamo" className="w-full bg-gray-green overflow-hidden">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[100px] py-[40px]">
         <h2
           className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[96px] text-[58px]"

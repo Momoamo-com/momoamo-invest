@@ -11,13 +11,13 @@ import InvestCtaSection from "@/components/sections/InvestCtaSection";
 import InvestPerformanceSection from "@/components/sections/InvestPerformanceSection";
 import InvestProjectSection from "@/components/sections/InvestProjectSection";
 import InvestTaxationSection from "@/components/sections/InvestTaxationSection";
+import InvestStatsSection from "@/components/sections/InvestStatsSection";
 import InvestWaitlistModalProvider from "@/components/modals/InvestWaitlistModalProvider";
 import { useEffect, useState } from "react";
 
 const InvestPage = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [stop, setStop] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0 && !isScroll) {
@@ -39,8 +39,9 @@ const InvestPage = () => {
   return (
     <InvestWaitlistModalProvider>
       <main>
-        <div className="bg-offsite-main overflow-hidden">
+        <div className="bg-offsite-main">
           <InvestHero />
+          <InvestStatsSection />
           <InvestOpportunitySection />
           <InvestModelSection />
           <InvestAdventureSection />

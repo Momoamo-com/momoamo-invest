@@ -161,7 +161,7 @@ const InvestHero = () => {
     return () => observer.disconnect();
   }, []);
   return (
-    <section aria-label="Hero Invest" className="w-full bg-offsite-main">
+    <section aria-label="Hero Invest" className="w-full bg-offsite-main overflow-hidden">
       <div className="max-w-[1360px] mx-auto w-full md:pt-8 pt-6">
         <header className="w-full xl:px-14 px-4">
           <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center">
