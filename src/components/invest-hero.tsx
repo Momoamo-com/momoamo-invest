@@ -362,7 +362,7 @@ const InvestHero = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute left-[19.3%] bottom-[4.4%] w-[68%] md:w-[46%] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+                  className={`absolute left-[19.3%] bottom-[4.4%] w-[68%] md:w-[240px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                 >
                   <div className="relative overflow-hidden bg-white/15 backdrop-blur-md">
                     <div className="relative px-6 md:px-8 py-6 md:py-7">

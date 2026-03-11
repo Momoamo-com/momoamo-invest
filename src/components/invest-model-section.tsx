@@ -84,12 +84,12 @@ const InvestModelSection = () => {
     <section aria-label="Modèle Momoamo" className="w-full bg-dark-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
         <div className="grid md:grid-cols-[1fr_1fr] gap-12">
-          <div className="w-full" ref={introRef as RefObject<HTMLDivElement>}>
+          <div className="w-full md:sticky md:top-24 md:self-start" ref={introRef as RefObject<HTMLDivElement>}>
             <p className="text-lime-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
               UN MODÈLE UNIQUE
             </p>
-            <h2 className="text-lime-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px] mt-4">
-              <span className="whitespace-nowrap">VALUE ADD + GESTION LOCATIVE :</span>
+            <h2 className="text-lime-green font-nichrome font-bold uppercase leading-none md:text-[84px] text-[58px] mt-4">
+              VALUE ADD + GESTION LOCATIVE :
               <br />
               LE MEILLEUR DES DEUX MONDES
             </h2>
