@@ -62,24 +62,24 @@ const InvestOpportunitySection = () => {
     >
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
         <header
-          className="max-w-[780px]"
+          className="max-w-[700px]"
           ref={titleRef as RefObject<HTMLHeadingElement>}
         >
-          <p className="text-black-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
+          <p className="text-black-green font-nichrome font-bold uppercase md:text-[24px] text-[18px] tracking-wider">
             L’OPPORTUNITÉ D’INVESTISSEMENT
           </p>
-          <h2 className="text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px] mt-4">
+          <h2 className="text-black-green font-nichrome font-bold uppercase leading-none md:text-[64px] text-[40px] mt-[16px] md:mt-[24px]">
             POURQUOI INVESTIR
             <br />
             AVEC MOMOAMO ?
           </h2>
-          <p className="mt-6 text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal leading-[1.1]">
+          <p className="mt-[16px] md:mt-[24px] text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal leading-[1.1]">
             Participez à un projet unique par son approche intégré, qui mêle performance et sécurité
           </p>
         </header>
 
         <div
-          className="mt-12 grid md:grid-cols-3 gap-x-10 gap-y-12"
+          className="mt-[48px] md:mt-[62px] grid md:grid-cols-3 gap-x-[56px] gap-y-[32px] md:gap-y-[62px]"
           ref={gridRef as RefObject<HTMLDivElement>}
         >
           {opportunityItems.map((item, index) => (
@@ -93,22 +93,22 @@ const InvestOpportunitySection = () => {
                 className="w-[40px] h-[40px] pointer-events-none"
                 loading="lazy"
               />
-              <p className="my-[24px] text-black-green font-normal font-nichrome md:text-[20px] text-[24px] tracking-normal leading-[1.1]">
+              <p className="my-[24px] md:my-[16px] text-black-green font-normal font-nichrome md:text-[24px] text-[18px] tracking-normal leading-[1.1]">
                 {item.label}
               </p>
-              <h3 className="text-black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
+              <h3 className="text-black-green font-nichrome font-bold uppercase md:text-[26px] text-[32px] leading-tight">
                 {item.headline}
               </h3>
-              <p className="mt-[8px] text-black-green font-general font-light text-[20px] leading-[1.4]">
+              <p className="mt-[8px] text-black-green font-general font-light text-[14px] md:text-[18px] leading-[1.4]">
                 {item.description}
               </p>
               {index === 0 && item.footnote ? (
-                <p className="mt-[8px] text-black-green font-general font-light text-[12px] leading-[1.4] italic">
+                <p className="mt-[8px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
                   {item.footnote}
                 </p>
               ) : null}
               {"footnote2" in item && item.footnote2 ? (
-                <p className="mt-[8px] text-black-green font-general font-light text-[12px] leading-[1.4] italic">
+                <p className="mt-[8px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
                   {item.footnote2}
                 </p>
               ) : null}

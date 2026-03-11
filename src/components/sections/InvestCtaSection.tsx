@@ -23,10 +23,10 @@ const InvestCtaSection = () => {
           className="relative z-10 flex flex-col items-center text-center max-w-[760px] mx-auto"
           ref={contentRef as RefObject<HTMLDivElement>}
         >
-          <h2 className="text-black-green font-nichrome font-bold uppercase leading-none md:text-[130px] text-[80px]">
+          <h2 className="text-black-green font-nichrome font-bold uppercase leading-none md:text-[130px] text-[58px]">
             REJOIGNEZ MOMOAMO
           </h2>
-          <p className="my-[24px] text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal leading-[1.1] max-w-full w-[720px] text-center">
+          <p className="my-[24px] text-black-green font-normal font-nichrome md:text-[32px] text-[26px] tracking-normal leading-[1.1] max-w-full w-[720px] text-center">
             Devenez acteur de notre projet immobilier unique et participez à la création d’espaces inspirants pour séjours professionnels en vous inscrivant dès maintenant.
           </p>
           <button

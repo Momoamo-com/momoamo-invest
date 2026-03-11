@@ -41,11 +41,11 @@ const InvestPerformanceSection = () => {
   return (
     <section
       aria-label="Performance financière Momoamo"
-      className="w-full bg-gray-green md:py-[120px] py-[64px]"
+      className="w-full bg-gray-green md:py-[100px] py-[48px]"
     >
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
         <h2
-          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px] max-w-full w-[850px] mx-auto"
+          className="text-center text-black-green font-nichrome font-bold uppercase leading-none md:text-[72px] text-[58px] max-w-full w-[750px] mx-auto"
           ref={titleRef as RefObject<HTMLHeadingElement>}
         >
           AU-DELÀ DE LA PERFORMANCE FINANCIÈRE
@@ -54,7 +54,7 @@ const InvestPerformanceSection = () => {
 
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4">
         <div
-          className="mt-12 md:grid hidden md:grid-cols-3 gap-8"
+          className="mt-[40px] md:grid hidden md:grid-cols-3 gap-[16px] md:gap-[56px]"
           ref={gridRef as RefObject<HTMLDivElement>}
         >
           {performanceCards.map((card) => (
@@ -70,10 +70,10 @@ const InvestPerformanceSection = () => {
                   loading="lazy"
                 />
               </div>
-              <h3 className="mt-5 text-black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
+              <h3 className="my-[16px] black-green font-nichrome font-bold uppercase text-[26px] md:text-[32px] leading-tight min-h-[2.4em]">
                 {card.title}
               </h3>
-              <p className="mt-3 text-black-green/80 font-general font-light text-[16px] leading-[1.4]">
+              <p className="black-green/80 font-general font-light text-[14px] md:text-[18px] leading-[1.2]">
                 {card.description}
               </p>
             </article>
@@ -102,10 +102,10 @@ const InvestPerformanceSection = () => {
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="mt-5 text-black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
+                  <h3 className="my-[16px] black-green font-nichrome font-bold uppercase text-[26px] md:text-[32px] leading-tight min-h-[2.4em]">
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-black-green/80 font-general font-light text-[16px] leading-[1.4]">
+                  <p className="black-green/80 font-general font-light text-[14px] md:text-[18px] leading-[1.2]">
                     {card.description}
                   </p>
                 </article>

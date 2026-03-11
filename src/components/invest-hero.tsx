@@ -234,26 +234,19 @@ const InvestHero = () => {
         </header>
 
         <div className="w-full xl:px-14 px-4 md:mt-[72px] mt-[40px]">
-          <div className="grid md:grid-cols-[1.05fr_0.95fr] gap-[60px] md:gap-[180px] items-start">
+          <div className="grid md:grid-cols-[1.1fr_0.9fr] gap-[46px] md:gap-[180px] items-start">
             <div className="w-full">
-              <h1 className="text-offsite-secondary font-nichrome font-bold uppercase leading-none md:text-[86px] text-[58px]">
-                Participez à la
-                <br />
-                naissance d&apos;une
-                <br />
-                collection de
-                <br />
-                maisons d&apos;exception
+              <h1 className="text-offsite-secondary font-nichrome font-bold uppercase leading-none md:text-[69px] text-[48px]">
+                Participez à la naissance d&apos;une collection de maisons d'exception
               </h1>
-              <p className="text-offsite-secondary font-general font-light text-[18px] leading-[1.3] mt-6 max-w-[520px]">
-                Investissez dans nos clubs deal immobiliers uniques et contribuez à
-                la création d&apos;espaces inspirants pour séjours professionnels.
+              <p className="text-offsite-secondary font-nichrome text-[24px] md:text-[30px] leading-[1.3] mt-[16px] md:mt-[32px] max-w-[520px]">
+                Investissez dans nos clubs deal immobiliers uniques et contribuez à la création d&apos;espaces inspirants pour séjours professionnels.
               </p>
 
-              <div className="mt-8 w-full max-w-[420px]">
+              <div className="mt-[32px] md:mt-[40px] w-full max-w-[440px]">
                 <label
                   htmlFor="invest-email"
-                  className="block text-offsite-secondary font-general font-light md:text-[16px] text-[14px]"
+                  className="block text-offsite-secondary font-general font-light md:text-[18px] text-[16px]"
                 >
                   Inscrivez vous à notre webinar de lancement :
                 </label>
@@ -263,7 +256,7 @@ const InvestHero = () => {
                       id="invest-email"
                       type="email"
                       placeholder="Votre email"
-                      className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-offsite-secondary/70 border-r-0"
+                      className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-[#A0FFE8] border-r-0 text-[16px] md:text-[20px] font-general font-normal"
                       aria-label="Votre email"
                     />
                     <button
@@ -289,14 +282,14 @@ const InvestHero = () => {
                 </form>
               </div>
 
-              <ul className="mt-6 flex flex-wrap items-center gap-y-2 gap-x-3">
+              <ul className="mt-[32px] md:mt-[40px] flex flex-wrap items-center justify-center md:justify-start gap-y-[8px]">
                 {valueProps.map((item, index) => (
                   <li key={item} className="flex items-center">
-                    <span className="text-offsite-secondary font-nichrome font-bold uppercase md:text-[16px] text-[14px] leading-none">
+                    <span className="text-offsite-secondary font-nichrome md:text-[24px] text-[20px] leading-none">
                       {item}
                     </span>
                     {index < valueProps.length - 1 && (
-                      <span className="hidden md:inline-block mx-3 text-offsite-secondary">
+                      <span className="md:inline-block mx-3 text-offsite-secondary">
                         •
                       </span>
                     )}
@@ -305,7 +298,7 @@ const InvestHero = () => {
               </ul>
             </div>
 
-            <div className="w-[80%] ml-auto md:ml-0 md:w-full md:mt-2 mt-8">
+            <div className="w-[80%] ml-auto md:ml-0 md:w-full md:mt-2 mt-0">
               <div
                 className="relative w-full aspect-[534/671]"
                 ref={heroVisualRef}
@@ -338,22 +331,22 @@ const InvestHero = () => {
                     <div className="aspect-[312/440] relative flex flex-col justify-between px-4 md:px-6 py-4 md:py-6">
                       <div></div>
                       <div className="text-center text-white">
-                        <p className="font-general text-[12px] uppercase tracking-wide">
+                        <p className="font-general text-[12px] tracking-wide">
                           TRI cible annuel
                         </p>
-                        <p className="mt-2 font-nichrome font-bold text-[32px] md:text-[44px] leading-none">
+                        <p className="font-nichrome font-bold text-[32px] md:text-[44px] leading-none">
                           12%
                         </p>
                       </div>
-                      <div className="mt-6 bg-white/90 text-dark-green px-4 py-3 md:px-5 md:py-4">
-                        <p className="font-nichrome font-bold uppercase text-[14px] md:text-[16px] leading-none">
+                      <div className="mt-6 bg-white/90 text-dark-green px-4 p-[7px] md:p-[11px]">
+                        <p className="font-nichrome font-bold uppercase text-[14px] md:text-[18px] leading-none text-[#292222]">
                           MORTAGNE-AU-PERCHE
                         </p>
-                        <div className="mt-2 flex items-center gap-2">
-                          <span className="inline-flex items-center bg-lime-green px-3 py-1 text-[12px] font-nichrome font-bold uppercase text-dark-green">
+                        <div className="mt-[3px] flex items-center gap-2">
+                          <span className="inline-flex items-center bg-dark-green p-[4px] text-[12px] font-nichrome uppercase text-lime-green leading-none">
                             2,9 M€
                           </span>
-                          <span className="text-[12px] md:text-[14px] font-general text-dark-green/80">
+                          <span className="text-[12px] font-general text-dark-green/80">
                             678 m²
                           </span>
                         </div>
@@ -362,11 +355,11 @@ const InvestHero = () => {
                   </div>
                 </div>
                 <div
-                  className={`absolute left-[19.3%] bottom-[4.4%] w-[68%] md:w-[240px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+                  className={`absolute left-[19.3%] bottom-[4.4%] w-[50%] md:w-[68%] md:w-[240px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                 >
-                  <div className="relative overflow-hidden bg-white/15 backdrop-blur-md">
-                    <div className="relative px-6 md:px-8 py-6 md:py-7">
-                      <p className="text-white font-nichrome font-bold text-[34px] md:text-[44px] leading-none text-center transition-all duration-200 ease-out">
+                  <div className="relative overflow-hidden bg-[#2922224D] backdrop-blur-sm">
+                    <div className="relative p-[16px] md:px-8 md:py-7">
+                      <p className="text-white font-nichrome font-bold text-[24px] md:text-[44px] leading-none text-center transition-all duration-200 ease-out">
                         {formattedAmount} €
                       </p>
                       <div className="mt-4">
@@ -386,9 +379,9 @@ const InvestHero = () => {
                       <button
                         type="button"
                         onClick={openModal}
-                        className="mt-4 w-full uppercase text-dark-green bg-lime-green font-nichrome font-bold text-[18px] md:text-[20px] h-[48px] md:h-[52px] flex items-center justify-center gap-2"
+                        className="mt-[8px] md:mt-[16px] w-full uppercase text-dark-green bg-lime-green font-nichrome font-bold text-[18px] md:text-[20px] p-[6px] md:p-[10px] flex items-center justify-center gap-2"
                       >
-                        INVESTIR →
+                        INVESTIR
                       </button>
                     </div>
                   </div>
@@ -399,12 +392,12 @@ const InvestHero = () => {
         </div>
       </div>
 
-      <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:mt-[88px] mt-[56px] pb-[64px]">
+      <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:mt-[110px] mt-[48px] pb-[64px]">
         <div className="text-center">
-          <h2 className="text-offsite-secondary font-nichrome font-bold uppercase md:text-[24px] text-[20px] leading-none">
+          <h2 className="text-offsite-secondary font-nichrome font-bold uppercase text-[24px] leading-none">
             ILS NOUS FONT CONFIANCE
           </h2>
-          <p className="text-offsite-secondary font-general font-light text-[18px] mt-2">
+          <p className="text-offsite-secondary font-general font-light text-[16px] md:text-[18px] mt-[8px]">
             300+ séminaires organisés
           </p>
         </div>

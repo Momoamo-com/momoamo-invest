@@ -82,28 +82,26 @@ const InvestModelSection = () => {
 
   return (
     <section aria-label="Modèle Momoamo" className="w-full bg-dark-green">
-      <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[120px] py-[64px]">
+      <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[160px] py-[32px]">
         <div className="grid md:grid-cols-[1fr_1fr] gap-12">
           <div className="w-full" ref={introRef as RefObject<HTMLDivElement>}>
-            <p className="text-lime-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
+            <p className="text-lime-green font-nichrome font-bold uppercase text-[18px] md:text-[32px] tracking-wider">
               UN MODÈLE UNIQUE
             </p>
-            <h2 className="text-lime-green font-nichrome font-bold uppercase leading-none md:text-[84px] text-[58px] mt-4">
+            <h2 className="text-lime-green font-nichrome font-bold uppercase leading-none md:text-[72px] text-[40px] mt-[16px] md:mt-[24px] max-w-full md:w-[560px]">
               VALUE ADD + GESTION LOCATIVE :
-              <br />
               LE MEILLEUR DES DEUX MONDES
             </h2>
-            <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1] mt-[24px] mb-[48px]">
-              Un modèle simple et inédit : ni pure marchand de biens, ni simple
-              gestionnaire immobilier.
+            <p className="text-lime-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1] mt-[16px] md:mt-[24px]">
+              Un modèle simple et inédit : ni pure marchand de biens, ni simple gestionnaire immobilier.
             </p>
-            <p className="text-lime-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1]">
+            <p className="text-lime-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1]  mt-[16px] md:mt-[24px]">
               Investir dans nos clubs deal c&apos;est profiter d&apos;un modèle intégré qui crée de la valeur à chaque étape.
             </p>
             <button
               type="button"
               onClick={openModal}
-              className="group mt-6 !border-[2px] uppercase hover:!bg-transparen text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
+              className="group mt-[40px] !border-[2px] uppercase hover:!bg-transparen text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[22px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
             >
               DÉCOUVRIR NOTRE SECONDE OPÉRATION
               <Image
@@ -144,14 +142,14 @@ const InvestModelSection = () => {
                     className="w-[40px] h-[40px] pointer-events-none"
                     loading="lazy"
                   />
-                  <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none my-[32px]">
+                  <h3 className="text-lime-green font-nichrome font-bold uppercase text-[24px] md:text-[32px] leading-none my-[24px] md:my-[32px]">
                     {item.title}
                   </h3>
-                  <ul className="mt-4 flex flex-col gap-3">
+                  <ul className="flex flex-col gap-[24px]">
                     {item.bullets.map((bullet) => (
                       <li
                         key={bullet}
-                        className="text-lime-green font-general font-light text-[20px] leading-[1.4]"
+                        className="text-lime-green font-general font-light text-[16px] md:text-[18px] leading-[1.4]"
                       >
                         {bullet}
                       </li>
@@ -185,14 +183,14 @@ const InvestModelSection = () => {
                       className="w-[40px] h-[40px] pointer-events-none"
                       loading="lazy"
                     />
-                    <h3 className="text-lime-green font-nichrome font-bold uppercase text-[28px] leading-none my-[32px]">
+                    <h3 className="text-lime-green font-nichrome font-bold uppercase text-[24px] md:text-[32px] leading-none my-[24px] md:my-[32px]">
                       {item.title}
                     </h3>
-                    <ul className="flex flex-col gap-3">
+                    <ul className="flex flex-col gap-[24px]">
                       {item.bullets.map((bullet) => (
                         <li
                           key={bullet}
-                          className="text-lime-green font-general font-light text-[20px] leading-[1.4]"
+                          className="text-lime-green font-general font-light text-[16px] md:text-[18px] leading-[1.4]"
                         >
                           {bullet}
                         </li>

@@ -44,16 +44,16 @@ const InvestAdventureSection = () => {
   const gridRef = useScrollStaggerIn(0.12);
   const mobileRef = useScrollSlideUp(0.1);
   return (
-    <section aria-label="Aventure Momoamo" className="w-full bg-gray-green md:py-[120px] py-[64px]">
+    <section aria-label="Aventure Momoamo" className="w-full bg-gray-green md:py-[60px] py-[40px]">
       <div className="max-w-[1360px] xl:px-14 px-4 mx-auto">
         <div
           className="max-w-full w-[820px]"
           ref={titleRef as RefObject<HTMLDivElement>}
         >
-          <p className="text-black-green font-nichrome font-bold uppercase text-[28px] tracking-wider">
+          <p className="text-black-green font-nichrome font-bold uppercase text-[18px] md:text-[24px] tracking-wider">
             UNE AVENTURE AMBITIEUSE
           </p>
-          <h2 className="text-start text-black-green font-nichrome font-bold md:text-[86px] text-[58px] uppercase leading-none mb-[24px] md:mb-[21px]">
+          <h2 className="text-start text-black-green font-nichrome font-bold md:text-[72px] text-[40px] uppercase leading-none mt-[16px] mt:mt-[24px]">
             CRÉER UN ACTEUR D’UN
             <br />
             GENRE NOUVEAU, SUR UN
@@ -62,10 +62,10 @@ const InvestAdventureSection = () => {
           </h2>
         </div>
         <div
-          className="ms-auto md:my-[72px] mb-[32px] mt-[24px] w-[783px] max-w-full"
+          className="ms-auto mb-[40px] md:mb-[52px] mt-[16px] md:mt-[24px] w-[783px] max-w-full"
           ref={contentRef as RefObject<HTMLDivElement>}
         >
-          <p className="text-black-green font-normal font-nichrome md:text-[36px] text-[26px] tracking-normal text-start leading-[1.1]">
+          <p className="text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1]">
             Nous ne menons pas de simples opérations immobilières. Momoamo
             c’est une marque d’hospitalité à construire, une collection de
             maisons d’exceptions, exploités par nous, pour durer.
@@ -73,7 +73,7 @@ const InvestAdventureSection = () => {
           <button
             type="button"
             onClick={openModal}
-            className="group mt-6 !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-dark-green hover:text-lime-green text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
+            className="group md:mt-[24px] mt-[16px] !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-dark-green hover:text-lime-green text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
           >
             REJOIGNEZ-NOUS ET INVESTISSEZ À NOS CÔTÉS
             <Image
@@ -91,7 +91,7 @@ const InvestAdventureSection = () => {
 
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4">
         <div
-          className="mt-12 md:grid hidden md:grid-cols-3 gap-8"
+          className="md:grid hidden md:grid-cols-3 gap-[16px] md:gap-[56px]"
           ref={gridRef as RefObject<HTMLDivElement>}
         >
           {adventureCards.map((card) => (
@@ -107,10 +107,10 @@ const InvestAdventureSection = () => {
                   loading="lazy"
                 />
               </div>
-              <h3 className="mt-5 black-green font-nichrome font-bold uppercase text-[28px] leading-tight">
+              <h3 className="my-[16px] black-green font-nichrome font-bold uppercase text-[26px] md:text-[32px] leading-tight min-h-[2.4em]">
                 {card.title}
               </h3>
-              <p className="mt-3 black-green/80 font-general font-light text-[16px] leading-[1.4]">
+              <p className="black-green/80 font-general font-light text-[14px] md:text-[18px] leading-[1.2]">
                 {card.description}
               </p>
             </article>
