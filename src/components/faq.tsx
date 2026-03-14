@@ -154,12 +154,12 @@ const data = [
 ];
 
 const FAQSection = () => {
-  const [openCategory, setOpenCategory] = useState<number | null>(null);
+  const [openCategory, setOpenCategory] = useState<number | null>(0);
   const [openQuestions, setOpenQuestions] = useState<
     Record<number, number | null>
-  >({});
+  >({ 0: 0 });
   const { titleRef } = useFAQAnimations();
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
 
   const toggleQuestion = (catIdx: number, qIdx: number) => {
     setOpenQuestions((prev) => ({

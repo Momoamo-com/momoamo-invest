@@ -93,7 +93,7 @@ const InvestOpportunitySection = () => {
         </header>
 
         <div
-          className="mt-[48px] md:mt-[62px] hidden md:grid md:grid-cols-3 gap-x-[56px] gap-y-[32px] md:gap-y-[62px]"
+          className="mt-[48px] md:mt-[62px] hidden md:grid md:grid-cols-3 gap-x-[56px] gap-y-[40px] md:gap-y-[72px]"
           ref={gridRef as RefObject<HTMLDivElement>}
         >
           {opportunityItems.map((item, index) => (
@@ -107,22 +107,22 @@ const InvestOpportunitySection = () => {
                 className="w-[40px] h-[40px] pointer-events-none"
                 loading="lazy"
               />
-              <p className="my-[24px] md:my-[16px] text-black-green font-normal font-nichrome md:text-[24px] text-[18px] tracking-normal leading-[1.1]">
+              <p className="my-[24px] md:my-[20px] text-black-green font-normal font-nichrome md:text-[24px] text-[18px] tracking-normal leading-[1.2]">
                 {item.label}
               </p>
               <h3 className="text-black-green font-nichrome font-bold uppercase md:text-[26px] text-[32px] leading-tight">
                 {item.headline}
               </h3>
-              <p className="mt-[8px] text-black-green font-general font-light text-[14px] md:text-[18px] leading-[1.4]">
+              <p className="mt-[12px] text-black-green font-general font-light text-[14px] md:text-[18px] leading-[1.5]">
                 {item.description}
               </p>
               {index === 0 && item.footnote ? (
-                <p className="mt-[8px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
+                <p className="mt-[12px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
                   {item.footnote}
                 </p>
               ) : null}
               {"footnote2" in item && item.footnote2 ? (
-                <p className="mt-[8px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
+                <p className="mt-[12px] text-black-green font-general font-light text-[10px] md:text-[15px] leading-[1.4] italic">
                   {item.footnote2}
                 </p>
               ) : null}
@@ -148,22 +148,22 @@ const InvestOpportunitySection = () => {
                     className="w-[40px] h-[40px] pointer-events-none"
                     loading="lazy"
                   />
-                  <p className="my-[24px] text-black-green font-normal font-nichrome text-[18px] tracking-normal leading-[1.1]">
+                  <p className="my-[24px] text-black-green font-normal font-nichrome text-[18px] tracking-normal leading-[1.2]">
                     {item.label}
                   </p>
                   <h3 className="text-black-green font-nichrome font-bold uppercase text-[32px] leading-tight">
                     {item.headline}
                   </h3>
-                  <p className="mt-[8px] text-black-green font-general font-light text-[14px] leading-[1.4]">
+                  <p className="mt-[12px] text-black-green font-general font-light text-[14px] leading-[1.5]">
                     {item.description}
                   </p>
                   {index === 0 && item.footnote ? (
-                    <p className="mt-[8px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
+                    <p className="mt-[12px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
                       {item.footnote}
                     </p>
                   ) : null}
                   {"footnote2" in item && item.footnote2 ? (
-                    <p className="mt-[8px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
+                    <p className="mt-[12px] text-black-green font-general font-light text-[10px] leading-[1.4] italic">
                       {item.footnote2}
                     </p>
                   ) : null}

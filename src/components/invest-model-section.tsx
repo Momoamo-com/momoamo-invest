@@ -83,9 +83,9 @@ const InvestModelSection = () => {
   return (
     <section aria-label="Modèle Momoamo" className="w-full bg-dark-green">
       <div className="max-w-[1360px] mx-auto w-full xl:px-14 px-4 md:py-[160px] py-[32px]">
-        <div className="grid md:grid-cols-[1fr_1fr] gap-12">
+        <div className="grid md:grid-cols-[1fr_1fr] gap-12 items-start">
           <div
-            className="w-full md:sticky md:top-6 md:self-start"
+            className="w-full md:sticky md:top-[40px] md:self-start"
             ref={introRef as RefObject<HTMLDivElement>}
           >
             <p className="text-lime-green font-nichrome font-bold uppercase text-[18px] md:text-[32px] tracking-wider">
