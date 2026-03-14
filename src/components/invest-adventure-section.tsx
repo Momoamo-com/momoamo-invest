@@ -68,7 +68,7 @@ const InvestAdventureSection = () => {
           <p className="text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1]">
             Nous ne menons pas de simples opérations immobilières. Momoamo
             c’est une marque d’hospitalité à construire, une collection de
-            maisons d’exceptions, exploités par nous, pour durer.
+            maisons d’exceptions, exploitées par nous, pour durer.
           </p>
           <button
             type="button"

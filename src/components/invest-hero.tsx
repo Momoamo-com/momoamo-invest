@@ -259,7 +259,7 @@ const InvestHero = () => {
                   htmlFor="invest-email"
                   className="block text-offsite-secondary font-general font-light md:text-[18px] text-[16px]"
                 >
-                  Inscrivez vous à notre webinar de lancement :
+                  Inscrivez-vous à notre webinar de lancement :
                 </label>
                 <form
                   className="mt-3 w-full"
@@ -412,7 +412,7 @@ const InvestHero = () => {
                 <div
                   className={`absolute left-[19.3%] bottom-[4.4%] w-[55%] md:w-[68%] md:w-[280px] transition duration-500 ease-out delay-300 motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 motion-reduce:transform-none ${isHeroVisualReady ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
                 >
-                  <div className="relative overflow-hidden bg-[#2922224D] backdrop-blur-sm">
+                  <div className="relative overflow-hidden bg-[#2922224D] backdrop-blur-[4px]">
                     <div className="relative p-[16px] md:px-8 md:py-7">
                       <p className={`text-white font-nichrome font-bold leading-none text-center transition-all duration-200 ease-out whitespace-nowrap ${investmentValue >= 1000000 ? "text-[18px] md:text-[32px]" : "text-[24px] md:text-[44px]"}`}>
                         {formattedAmount} €

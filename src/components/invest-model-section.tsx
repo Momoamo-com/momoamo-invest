@@ -96,7 +96,7 @@ const InvestModelSection = () => {
               LE MEILLEUR DES DEUX MONDES
             </h2>
             <p className="text-lime-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1] mt-[16px] md:mt-[24px]">
-              Un modèle simple et inédit : ni pure marchand de biens, ni simple gestionnaire immobilier.
+              Un modèle simple et inédit : ni pur marchand de biens, ni simple gestionnaire immobilier.
             </p>
             <p className="text-lime-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal text-start leading-[1.1]  mt-[16px] md:mt-[24px]">
               Investir dans nos clubs deal c&apos;est profiter d&apos;un modèle intégré qui crée de la valeur à chaque étape.

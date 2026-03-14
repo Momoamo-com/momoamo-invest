@@ -40,7 +40,7 @@ const InvestProjectSection = () => {
             loading="lazy"
           />
 
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-[10px] w-[95%] md:w-[480px] max-w-full md:left-[50px] md:bottom-[50px] md:translate-x-0 md:top-auto backdrop-blur-sm bg-[#2922224D]">
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-[10px] w-[95%] md:w-[480px] max-w-full md:left-[50px] md:bottom-[50px] md:translate-x-0 md:top-auto backdrop-blur-[4px] bg-[#2922224D]">
             <div className="p-[24px] md:p-[32px]">
               <h3 className="text-white font-nichrome font-bold uppercase text-[28px] md:text-[32px] leading-tight">
                 DOMAINE DE COURTIGIS

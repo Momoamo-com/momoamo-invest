@@ -23,7 +23,7 @@ const opportunityItems = [
     image: Invest_1_Svg,
     label: "Rendement Cible",
     headline: "TRI 12% / an, net de frais",
-    description: "Plus value foncière et forte rentabilité locative",
+    description: "Plus-value foncière et forte rentabilité locative",
     footnote:
       "*Les performances passées ne préjugent pas des performances futures",
   },
@@ -59,7 +59,7 @@ const opportunityItems = [
     image: Invest_6_Svg,
     label: "Des avantages en nature",
     headline: "REJOIGNEZ LE CLUB FERMÉ DES INVESTISSEURS",
-    description: "Accès privilégié aux maisons et évènements exclusifs",
+    description: "Accès privilégié aux maisons et événements exclusifs",
   },
 ];
 
@@ -88,7 +88,7 @@ const InvestOpportunitySection = () => {
             AVEC MOMOAMO ?
           </h2>
           <p className="mt-[16px] md:mt-[24px] text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal leading-[1.1]">
-            Participez à un projet unique par son approche intégré, qui mêle performance et sécurité
+            Participez à un projet unique par son approche intégrée, qui mêle performance et sécurité
           </p>
         </header>
 
