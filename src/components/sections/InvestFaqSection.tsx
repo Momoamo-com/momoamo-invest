@@ -70,31 +70,31 @@ const data = [
       },
     ],
   },
-  {
-    title: "Juridique, frais, risques",
-    children: [
-      {
-        title: "Quel est le montage juridique ?",
-        description:
-          "Chaque opération est isolée dans une structure dédiée (SPV), généralement une SA.\n\nEn investissant, vous devenez associé de cette société, qui :\n- détient l’actif immobilier\n- exploite l’activité de séminaires\n\nVous détenez donc indirectement une part du bien immobilier proportionnelle à votre investissement.",
-      },
-      {
-        title: "Quelles sont les garanties en cas de défaillance ?",
-        description:
-          "Premier niveau : égalité entre investisseurs\n- tous les investisseurs sont traités à égalité\n- remboursement au prorata des montants investis\n\nDeuxième niveau : garantie sur les titres Momoamo\nSi le capital ne peut être intégralement restitué via le SPV :\n- les investisseurs reçoivent des titres de la holding Momoamo\n- permettant de percevoir des dividendes jusqu'au remboursement total",
-      },
-      {
-        title: "Quels types de titres puis-je souscrire ?",
-        description:
-          "Deux instruments sont proposés :\n\nActions\n- vous devenez associé du projet\n- éligible aux dispositifs fiscaux (dont 150-0 B ter)\n- rendement capitalisé et versé à la sortie\n\nObligations\n- vous devenez créancier de la société\n- coupons mensuels dès exploitation (18–24 mois)\n- une partie du rendement distribuée pendant la vie du projet",
-      },
-      {
-        title: "Traitement égalitaire",
-        description:
-          "Actionnaires et obligataires sont traités à égalité lors de la sortie.\n\nLes obligataires renoncent contractuellement à leur rang de séniorité :\nle remboursement intervient au même moment et au même prorata que les actionnaires, y compris en cas de défaillance.",
-      },
-    ],
-  },
+  // {
+  //   title: "Juridique, frais, risques",
+  //   children: [
+  //     {
+  //       title: "Quel est le montage juridique ?",
+  //       description:
+  //         "Chaque opération est isolée dans une structure dédiée (SPV), généralement une SA.\n\nEn investissant, vous devenez associé de cette société, qui :\n- détient l’actif immobilier\n- exploite l’activité de séminaires\n\nVous détenez donc indirectement une part du bien immobilier proportionnelle à votre investissement.",
+  //     },
+  //     {
+  //       title: "Quelles sont les garanties en cas de défaillance ?",
+  //       description:
+  //         "Premier niveau : égalité entre investisseurs\n- tous les investisseurs sont traités à égalité\n- remboursement au prorata des montants investis\n\nDeuxième niveau : garantie sur les titres Momoamo\nSi le capital ne peut être intégralement restitué via le SPV :\n- les investisseurs reçoivent des titres de la holding Momoamo\n- permettant de percevoir des dividendes jusqu'au remboursement total",
+  //     },
+  //     {
+  //       title: "Quels types de titres puis-je souscrire ?",
+  //       description:
+  //         "Deux instruments sont proposés :\n\nActions\n- vous devenez associé du projet\n- éligible aux dispositifs fiscaux (dont 150-0 B ter)\n- rendement capitalisé et versé à la sortie\n\nObligations\n- vous devenez créancier de la société\n- coupons mensuels dès exploitation (18–24 mois)\n- une partie du rendement distribuée pendant la vie du projet",
+  //     },
+  //     {
+  //       title: "Traitement égalitaire",
+  //       description:
+  //         "Actionnaires et obligataires sont traités à égalité lors de la sortie.\n\nLes obligataires renoncent contractuellement à leur rang de séniorité :\nle remboursement intervient au même moment et au même prorata que les actionnaires, y compris en cas de défaillance.",
+  //     },
+  //   ],
+  // },
 ];
 
 const InvestFaqSection = () => {
