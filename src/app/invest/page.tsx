@@ -1,5 +1,4 @@
 "use client";
-import FAQSection from "@/components/faq";
 import FooterSection from "@/components/footer";
 import InvestHero from "@/components/invest-hero";
 import InvestAdventureSection from "@/components/invest-adventure-section";
@@ -8,6 +7,7 @@ import InvestOpportunitySection from "@/components/invest-opportunity-section";
 import InvestLogosSection from "@/components/sections/InvestLogosSection";
 import InvestAboutSection from "@/components/sections/InvestAboutSection";
 import InvestCtaSection from "@/components/sections/InvestCtaSection";
+import InvestFaqSection from "@/components/sections/InvestFaqSection";
 import InvestWebinarCtaSection from "@/components/sections/InvestWebinarCtaSection";
 import InvestPerformanceSection from "@/components/sections/InvestPerformanceSection";
 import InvestProjectSection from "@/components/sections/InvestProjectSection";
@@ -54,7 +54,7 @@ const InvestPage = () => {
           <InvestAboutSection />
 
           <div className="bg-gray-green overflow-hidden">
-            <FAQSection />
+            <InvestFaqSection />
           </div>
 
           <InvestCtaSection />
