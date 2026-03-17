@@ -37,7 +37,7 @@ const opportunityItems = [
   {
     image: Invest_3_Svg,
     label: "Distribution",
-    headline: "Mensuelle ou In-fine*",
+    headline: "Mensuelle ou In-fine",
     description: "Directement issus des revenus de l’activité",
     footnote2: "*selon le choix de l’investisseur",
   },

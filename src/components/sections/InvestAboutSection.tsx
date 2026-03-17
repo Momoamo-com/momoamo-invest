@@ -10,7 +10,7 @@ import {
   useScrollStaggerIn,
 } from "@/animations/scrollAnimations";
 import AissaImage from "@/assets/images/invest-page/Team_Aissa.webp";
-import OlivierImage from "@/assets/images/invest-page/invest-about-1.webp";
+import OlivierImage from "@/assets/images/invest-page/invest-about-OLIVIER.webp";
 
 const aboutCards = [
   {
@@ -18,7 +18,7 @@ const aboutCards = [
     title: "OLIVIER, KYMONO",
     imageClass: "object-cover",
     description:
-      "En quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisésEn quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisés dont certains sur des concepts vus à la télé.",
+      "En quelques années Olivier, a créé un empire de la culture d’entreprise avec Kymono. L’entreprise totalise aujourd’hui plus de 10 000 clients et plus 300 séminaires organisés dont certains sur des concepts vus à la télé.",
   },
   {
     image: AissaImage,
