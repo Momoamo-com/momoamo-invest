@@ -48,7 +48,7 @@ const logos = [
 ];
 
 const valueProps = [
-  "TRI Cible 10-14%",
+  "TRI Cible 12%",
   "Un opérateur unique",
   "Un marché explosif",
 ];

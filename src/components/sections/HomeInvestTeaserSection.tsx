@@ -54,7 +54,7 @@ const HomeInvestTeaserSection = () => {
               rejoindre le club.
             </p>
             <p className="my-[32px] text-black-green font-nichrome font-normal text-[16px] md:text-[18px] leading-none">
-              TRI Cible 10-14% • Durée 3-5 ans • Accès VIP aux maisons
+              TRI Cible 12% • Durée 3-5 ans • Accès VIP aux maisons
             </p>
             <button
               type="button"

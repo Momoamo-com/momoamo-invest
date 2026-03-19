@@ -11,6 +11,7 @@ const projectDetails = [
   { label: "Acquisition", value: "Mars 2024" },
   { label: "Ouverture", value: "2026" },
   { label: "EBITDA", value: "1,3m€ / an" },
+  { label: "Notre rendement locatif net", value: "20%" },
 ];
 
 const InvestProjectSection = () => {
@@ -64,7 +65,7 @@ const InvestProjectSection = () => {
 
               <div className="grid grid-cols-[1fr_auto] gap-6 pt-[18px] align-items-center">
                 <p className="text-white font-semibold font-general text-[16px] md:text-[18px] tracking-normal leading-[1.2]">
-                  TRI cible opération
+                  Votre TRI cible net
                 </p>
                 <span className="inline-flex items-center justify-center bg-lime-green text-dark-green font-nichrome font-bold uppercase text-[16px] md:text-[18px] px-4 py-1">
                   12%
