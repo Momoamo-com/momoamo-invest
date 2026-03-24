@@ -17,7 +17,7 @@ const InvestWebinarCtaSection = () => {
           <div className="flex justify-center">
             <button
               type="button"
-              onClick={openModal}
+              onClick={() => openModal()}
               className="uppercase text-lime-green bg-dark-green font-nichrome font-bold text-[16px] md:text-[20px] px-[24px] py-[10px] shrink-0"
             >
               JE M&apos;INSCRIS

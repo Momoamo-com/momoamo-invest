@@ -90,9 +90,16 @@ const capacityOptions = [
 type InvestWaitlistModalProps = {
   isOpen: boolean;
   onClose: () => void;
+  initialEmail?: string;
+  initialStep?: 1 | 2;
 };
 
-const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
+const InvestWaitlistModal = ({
+  isOpen,
+  onClose,
+  initialEmail,
+  initialStep,
+}: InvestWaitlistModalProps) => {
   const [step, setStep] = useState<1 | 2>(1);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -139,10 +146,10 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
     setCapacityError("");
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/handle-invest-submission", {
+      const res = await fetch("/api/activecampaign-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, capacity, source: "waitlist" }),
+        body: JSON.stringify({ email, capacity }),
       });
       if (res.ok) {
         setSubmitSuccess(true);
@@ -188,13 +195,21 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
       return;
     }
 
+    const nextStep = initialStep ?? 1;
+    setStep(nextStep);
+    setEmail(initialEmail ?? "");
+    setEmailError("");
+    setCapacity("");
+    setCapacityError("");
+    setIsSubmitting(false);
+    setSubmitSuccess(false);
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
     const timer = setTimeout(() => {
-      if (step === 1 && emailInputRef.current) {
+      if (nextStep === 1 && emailInputRef.current) {
         emailInputRef.current.focus();
       }
-      if (step === 2 && firstRadioRef.current) {
+      if (nextStep === 2 && firstRadioRef.current) {
         firstRadioRef.current.focus();
       }
     }, 100);
@@ -204,7 +219,7 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
       document.body.style.overflow = "";
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, handleKeyDown, resetState, step]);
+  }, [isOpen, handleKeyDown, resetState, initialEmail, initialStep]);
 
   if (!isOpen) return null;
 
@@ -240,22 +255,26 @@ const InvestWaitlistModal = ({ isOpen, onClose }: InvestWaitlistModalProps) => {
           <div className="flex justify-center">
             <MomoamoLogo className="!w-[256px] md:!w-[300px] justify-center text-[#292222]" />
           </div>
-          <h2
-            id="invest-waitlist-title"
-            className="mt-[40px] md:mt-[24px] text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal leading-[1.1]"
-          >
-            {step === 1
-              ? "Rejoignez la liste d'attente et participez au webinar de lancement de notre seconde opération"
-              : "Indiquez votre capacité d’investissement"}
-          </h2>
-          <p
-            id="invest-waitlist-description"
-            className="mt-[8px] text-black-green font-general font-light text-[14px] md:text-[18px] leading-[1.5]"
-          >
-            {step === 1
-              ? "Entre votre adresse email pour commencer votre inscription."
-              : "Complétez le questionnaire pour finaliser votre inscription à la liste d’attente."}
-          </p>
+          {!submitSuccess ? (
+            <>
+              <h2
+                id="invest-waitlist-title"
+                className="mt-[40px] md:mt-[24px] text-black-green font-normal font-nichrome md:text-[32px] text-[24px] tracking-normal leading-[1.1]"
+              >
+                {step === 1
+                  ? "Rejoignez la liste d'attente et participez au webinar de lancement de notre seconde opération"
+                  : "Indiquez votre capacité d’investissement"}
+              </h2>
+              <p
+                id="invest-waitlist-description"
+                className="mt-[8px] text-black-green font-general font-light text-[14px] md:text-[18px] leading-[1.5]"
+              >
+                {step === 1
+                  ? "Entre votre adresse email pour commencer votre inscription."
+                  : "Complétez le questionnaire pour finaliser votre inscription à la liste d’attente."}
+              </p>
+            </>
+          ) : null}
         </div>
 
         {submitSuccess ? (

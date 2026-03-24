@@ -58,7 +58,7 @@ const HomeInvestTeaserSection = () => {
             </p>
             <button
               type="button"
-              onClick={openModal}
+              onClick={() => openModal()}
               className="group !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-[#292222] hover:text-[#292222] text-[#EEE5D7] bg-[#292222] font-bold font-nichrome md:text-[28px] text-[28px] md:h-[64px] h-[60px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-[#292222] self-baseline"
             >
               REJOIGNEZ LE CLUB

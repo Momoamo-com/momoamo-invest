@@ -264,25 +264,14 @@ const InvestHero = () => {
                 <form
                   className="mt-3 w-full"
                   aria-label="Inscription webinar"
-                  onSubmit={async (e) => {
+                  onSubmit={(e) => {
                     e.preventDefault();
-                    if (!heroEmail || heroEmailStatus === "submitting") return;
-                    setHeroEmailStatus("submitting");
-                    try {
-                      const res = await fetch("/api/handle-invest-submission", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email: heroEmail, source: "hero" }),
-                      });
-                      if (res.ok) {
-                        setHeroEmailStatus("success");
-                        setHeroEmail("");
-                      } else {
-                        setHeroEmailStatus("error");
-                      }
-                    } catch {
-                      setHeroEmailStatus("error");
-                    }
+                    if (!e.currentTarget.reportValidity()) return;
+                    const nextEmail = heroEmail.trim();
+                    if (!nextEmail) return;
+                    openModal({ email: nextEmail, step: 2 });
+                    setHeroEmail("");
+                    setHeroEmailStatus("idle");
                   }}
                 >
                   {heroEmailStatus === "success" ? (
@@ -433,7 +422,7 @@ const InvestHero = () => {
                       </div>
                       <button
                         type="button"
-                        onClick={openModal}
+                        onClick={() => openModal()}
                         className="mt-[8px] md:mt-[16px] w-full uppercase text-dark-green bg-lime-green font-nichrome font-bold text-[18px] md:text-[20px] p-[6px] md:p-[10px] flex items-center justify-center gap-2"
                       >
                         INVESTIR

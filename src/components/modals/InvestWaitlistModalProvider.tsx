@@ -5,7 +5,7 @@ import { createContext, useContext, useMemo, useState, type ReactNode } from "re
 import InvestWaitlistModal from "@/components/modals/InvestWaitlistModal";
 
 type InvestWaitlistModalContextValue = {
-  openModal: () => void;
+  openModal: (options?: { email?: string; step?: 1 | 2 }) => void;
 };
 
 const InvestWaitlistModalContext = createContext<InvestWaitlistModalContextValue | null>(null);
@@ -24,10 +24,16 @@ type InvestWaitlistModalProviderProps = {
 
 const InvestWaitlistModalProvider = ({ children }: InvestWaitlistModalProviderProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [initialEmail, setInitialEmail] = useState<string | undefined>(undefined);
+  const [initialStep, setInitialStep] = useState<1 | 2 | undefined>(undefined);
 
   const value = useMemo(
     () => ({
-      openModal: () => setIsOpen(true),
+      openModal: (options?: { email?: string; step?: 1 | 2 }) => {
+        setInitialEmail(options?.email);
+        setInitialStep(options?.step);
+        setIsOpen(true);
+      },
     }),
     []
   );
@@ -35,7 +41,12 @@ const InvestWaitlistModalProvider = ({ children }: InvestWaitlistModalProviderPr
   return (
     <InvestWaitlistModalContext.Provider value={value}>
       {children}
-      <InvestWaitlistModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      <InvestWaitlistModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        initialEmail={initialEmail}
+        initialStep={initialStep}
+      />
     </InvestWaitlistModalContext.Provider>
   );
 };

@@ -103,7 +103,7 @@ const InvestModelSection = () => {
             </p>
             <button
               type="button"
-              onClick={openModal}
+              onClick={() => openModal()}
               className="group mt-[40px] !border-[2px] uppercase hover:!bg-transparen text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[22px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
             >
               DÉCOUVRIR NOTRE SECONDE OPÉRATION

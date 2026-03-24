@@ -72,7 +72,7 @@ const InvestAdventureSection = () => {
           </p>
           <button
             type="button"
-            onClick={openModal}
+            onClick={() => openModal()}
             className="group md:mt-[24px] mt-[16px] !border-[2px] uppercase hover:!bg-transparent hover:border hover:border-dark-green hover:text-lime-green text-dark-green bg-lime-green font-bold font-nichrome md:text-[28px] text-[20px] md:h-[64px] h-[70px] flex justify-center items-center gap-[10px] md:py-5 py-4 px-6 transition-all duration-300 ease-in border-lime-green leading-[1.1] text-start"
           >
             REJOIGNEZ-NOUS ET INVESTISSEZ À NOS CÔTÉS
