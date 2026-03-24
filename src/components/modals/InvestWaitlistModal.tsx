@@ -332,7 +332,7 @@ const InvestWaitlistModal = ({
                     setFirstName(event.target.value);
                     if (firstNameError) setFirstNameError("");
                   }}
-                  placeholder="Votre prénom"
+                  placeholder="Votre prénom *"
                   className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
                   aria-required="true"
                 />
@@ -364,7 +364,7 @@ const InvestWaitlistModal = ({
                   setEmail(event.target.value);
                   if (emailError) setEmailError("");
                 }}
-                placeholder="Votre email"
+                placeholder="Votre email *"
                 className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
               />
               {emailError ? (
