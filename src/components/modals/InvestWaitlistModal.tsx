@@ -101,6 +101,9 @@ const InvestWaitlistModal = ({
   initialStep,
 }: InvestWaitlistModalProps) => {
   const [step, setStep] = useState<1 | 2>(1);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [capacity, setCapacity] = useState("");
@@ -108,7 +111,7 @@ const InvestWaitlistModal = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const modalRef = useRef<HTMLDivElement | null>(null);
-  const emailInputRef = useRef<HTMLInputElement | null>(null);
+  const firstNameInputRef = useRef<HTMLInputElement | null>(null);
   const firstRadioRef = useRef<HTMLInputElement | null>(null);
 
   const closeModal = useCallback(() => {
@@ -117,6 +120,9 @@ const InvestWaitlistModal = ({
 
   const resetState = useCallback(() => {
     setStep(1);
+    setFirstName("");
+    setLastName("");
+    setFirstNameError("");
     setEmail("");
     setEmailError("");
     setCapacity("");
@@ -128,6 +134,11 @@ const InvestWaitlistModal = ({
   const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const handleEmailNext = () => {
+    if (!firstName.trim()) {
+      setFirstNameError("Veuillez entrer votre prénom.");
+      return;
+    }
+    setFirstNameError("");
     if (!email.trim() || !isValidEmail(email)) {
       setEmailError("Veuillez entrer une adresse email valide.");
       return;
@@ -149,7 +160,7 @@ const InvestWaitlistModal = ({
       const res = await fetch("/api/activecampaign-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, capacity }),
+        body: JSON.stringify({ email, capacity, firstName, lastName }),
       });
       if (res.ok) {
         setSubmitSuccess(true);
@@ -197,6 +208,9 @@ const InvestWaitlistModal = ({
 
     const nextStep = initialStep ?? 1;
     setStep(nextStep);
+    setFirstName("");
+    setLastName("");
+    setFirstNameError("");
     setEmail(initialEmail ?? "");
     setEmailError("");
     setCapacity("");
@@ -206,8 +220,8 @@ const InvestWaitlistModal = ({
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleKeyDown);
     const timer = setTimeout(() => {
-      if (nextStep === 1 && emailInputRef.current) {
-        emailInputRef.current.focus();
+      if (nextStep === 1 && firstNameInputRef.current) {
+        firstNameInputRef.current.focus();
       }
       if (nextStep === 2 && firstRadioRef.current) {
         firstRadioRef.current.focus();
@@ -304,26 +318,61 @@ const InvestWaitlistModal = ({
           </div>
         ) : step === 1 ? (
           <div className="mt-[40px]">
-            <label
-              htmlFor="invest-waitlist-email"
-              className="sr-only"
-            >
-              Votre email
-            </label>
-            <input
-              ref={emailInputRef}
-              id="invest-waitlist-email"
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-              placeholder="Votre email"
-              className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
-            />
-            {emailError ? (
-              <p className="mt-2 text-[14px] text-[#9c2f2f] font-general">
-                {emailError}
-              </p>
-            ) : null}
+            <div className="flex flex-col gap-3">
+              <div className="grid grid-cols-2 gap-3">
+                <label htmlFor="invest-waitlist-first-name" className="sr-only">
+                  Votre prénom
+                </label>
+                <input
+                  ref={firstNameInputRef}
+                  id="invest-waitlist-first-name"
+                  type="text"
+                  value={firstName}
+                  onChange={(event) => {
+                    setFirstName(event.target.value);
+                    if (firstNameError) setFirstNameError("");
+                  }}
+                  placeholder="Votre prénom"
+                  className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
+                  aria-required="true"
+                />
+                <label htmlFor="invest-waitlist-last-name" className="sr-only">
+                  Votre nom
+                </label>
+                <input
+                  id="invest-waitlist-last-name"
+                  type="text"
+                  value={lastName}
+                  onChange={(event) => setLastName(event.target.value)}
+                  placeholder="Votre nom"
+                  className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
+                />
+              </div>
+              {firstNameError ? (
+                <p className="text-[14px] text-[#9c2f2f] font-general">
+                  {firstNameError}
+                </p>
+              ) : null}
+              <label htmlFor="invest-waitlist-email" className="sr-only">
+                Votre email
+              </label>
+              <input
+                id="invest-waitlist-email"
+                type="email"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                  if (emailError) setEmailError("");
+                }}
+                placeholder="Votre email"
+                className="w-full border border-[#292222] bg-transparent px-4 py-3 font-general text-[16px] text-[#292222] focus:outline-none"
+              />
+              {emailError ? (
+                <p className="text-[14px] text-[#9c2f2f] font-general">
+                  {emailError}
+                </p>
+              ) : null}
+            </div>
             <button
               type="button"
               onClick={handleEmailNext}
