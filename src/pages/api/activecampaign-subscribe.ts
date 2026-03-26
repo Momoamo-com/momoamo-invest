@@ -5,6 +5,7 @@ type SubscribePayload = {
   firstName?: string;
   lastName?: string;
   capacity?: string;
+  listid?: number | string;
 };
 
 export default async function handler(
@@ -13,7 +14,8 @@ export default async function handler(
 ) {
   if (req.method !== "POST") return res.status(405).end();
 
-  const { email, firstName, lastName, capacity } = req.body as SubscribePayload;
+  const { email, firstName, lastName, capacity, listid } =
+    req.body as SubscribePayload;
   if (!email) {
     return res.status(400).json({ error: "Email is required" });
   }
@@ -51,6 +53,31 @@ export default async function handler(
     if (!response.ok) {
       const errorText = await response.text();
       return res.status(502).json({ error: errorText });
+    }
+
+    const data = (await response.json()) as { contact?: { id?: string } };
+    const contactId = data.contact?.id;
+
+    if (listid && contactId) {
+      const listResponse = await fetch(`${baseUrl}/api/3/contactLists`, {
+        method: "POST",
+        headers: {
+          "Api-Token": apiKey,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contactList: {
+            list: String(listid),
+            contact: String(contactId),
+            status: 1,
+          },
+        }),
+      });
+
+      if (!listResponse.ok) {
+        const listError = await listResponse.text();
+        return res.status(502).json({ error: listError });
+      }
     }
 
     return res.status(200).json({ success: true });
