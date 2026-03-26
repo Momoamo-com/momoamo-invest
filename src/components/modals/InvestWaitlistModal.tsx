@@ -160,7 +160,7 @@ const InvestWaitlistModal = ({
       const res = await fetch("/api/activecampaign-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, capacity, firstName, lastName }),
+        body: JSON.stringify({ email, capacity, firstName, lastName, listid: 3 }),
       });
       if (res.ok) {
         setSubmitSuccess(true);
