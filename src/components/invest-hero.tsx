@@ -130,8 +130,6 @@ const InvestHero = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [investmentValue, setInvestmentValue] = useState(100000);
   const [isHeroVisualReady, setHeroVisualReady] = useState(false);
-  const [heroFirstName, setHeroFirstName] = useState("");
-  const [heroLastName, setHeroLastName] = useState("");
   const [heroEmail, setHeroEmail] = useState("");
   const [heroEmailStatus, setHeroEmailStatus] = useState<
     "idle" | "submitting" | "success" | "error"
@@ -271,18 +269,9 @@ const InvestHero = () => {
                   onSubmit={(e) => {
                     e.preventDefault();
                     if (!e.currentTarget.reportValidity()) return;
-                    const nextFirstName = heroFirstName.trim();
-                    if (!nextFirstName) return;
                     const nextEmail = heroEmail.trim();
                     if (!nextEmail) return;
-                    openModal({
-                      email: nextEmail,
-                      firstName: nextFirstName,
-                      lastName: heroLastName.trim(),
-                      step: 2,
-                    });
-                    setHeroFirstName("");
-                    setHeroLastName("");
+                    openModal({ email: nextEmail, step: 2 });
                     setHeroEmail("");
                     setHeroEmailStatus("idle");
                   }}
@@ -293,27 +282,6 @@ const InvestHero = () => {
                     </p>
                   ) : (
                     <>
-                      <div className="grid grid-cols-2 gap-3 w-full mb-3">
-                        <Input
-                          id="invest-first-name"
-                          type="text"
-                          required
-                          value={heroFirstName}
-                          onChange={(e) => setHeroFirstName(e.target.value)}
-                          placeholder="Votre prénom"
-                          className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-[#A0FFE8] text-[16px] md:text-[20px] font-general font-normal"
-                          aria-label="Votre prénom"
-                        />
-                        <Input
-                          id="invest-last-name"
-                          type="text"
-                          value={heroLastName}
-                          onChange={(e) => setHeroLastName(e.target.value)}
-                          placeholder="Votre nom"
-                          className="h-[52px] rounded-none border-offsite-secondary text-offsite-secondary placeholder:text-[#A0FFE8] text-[16px] md:text-[20px] font-general font-normal"
-                          aria-label="Votre nom"
-                        />
-                      </div>
                       <div className="flex w-full">
                         <Input
                           id="invest-email"
